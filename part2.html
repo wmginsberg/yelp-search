@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .link {
+            stroke: #ccc;
+        }
+
+        .node text {
+          pointer-events: none;
+          font: 10px sans-serif;
+        }
+
+        .tbl-sn {
+            width: auto;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 auto;
+        }
+
+        .tw {
+            display:inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
+        #chart {
+            border: 1px solid black;
+        }
+        th {
+            text-align: center;
+            font-size: 12px;
+        }
+        td li {
+            font-size: 12px;
+            left: 10px;
+        }
+        td {
+            padding: 5px 15px;
+            text-align: center;
+        }
+        .shell {
+            background-color: black;
+            font: 13px "Courier New", Courier;
+            color: white;
+            padding: 10px 20px; 
+            margin-top: 10px;
+        }
+        h3, h4 {
+            margin-top: 30px;
+        }
+        img { width: 400px; margin: 15px; }
+        #toc li { margin-left: 15px; margin-top: -10px; }
+    </style>
+    <title>Assignment 4: Visualization</title>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="page-header center">
+                <h1>Part 2: <small>Yelp Recommendations</small></h1>
+                <h5><small>by Jerome de Nijs (jadenijs), Wendy Ginsberg (wginsber), Miraj Shah (mgs3)</small></h5>
+            </div>
+            <div>
+                <ul id="toc" class="nav navbar-nav">
+                    <li><a href="#theproblem"> The Problem</a></li>
+                    <li><a href="#ourhypothesis"> Our Hypothesis</a> </li> 
+                    <li><a href="#methodology"> Methodology</a> </li>
+                    <li><a href="#resultstesting"> Results &amp; Testing </a> </li>
+                    <li><a href="#visualization"> Visualization </a> </li>
+                </ul>                       
+            <div>
+            <br><br>  
+            <h3 id="theproblem"> The Problem </h3>
+            <p> A lot of the time, people do not know where to eat, exercise, stay, or shop. This is especially a problem when people are visiting new cities or moving there for a brief or extended period of time. Yelp is great, because you can search for restaurants and business by name, product, category, etc. Though Yelp is great for searching, their recommendation feature is only a minor part of the site, providing users with only three related business off to the side of a business profile under a <em> People Also Viewed </em> section rather than a <em> Related Businesses </em> heading. We wanted to use the Yelp dataset to embellish the site and add for a more personal experience and to encourage users to explore new options based on ones they already like. </p>
+
+            <hr>
+
+            <h3 id="ourhypothesis"> Our Hypothesis </h3>
+            <p> Running K-Nearest Neighbors on topics created by an LDA model on the review text of businesses will result in an accurate reccomendation system. </p>
+
+            <hr>
+
+            <h3 id="methodology"> Methodology </h3>
+            <p> The review text for each business was concatenated into a large string and then sent through a tokenizer to clean up the text including porter stemming the words, removing puncuation, trying to deal with mispelled words by removing extra letters.  This was done through using the <strong>mrjob map reduce framework</strong> and the results were written to a csv in the format business_id,review_text.  After all the text had been prepared, the text was saved in a dictionary, a class that was provided by the <strong>Gensim module</strong> for python, so that each distinct word and its count within the document could be contributed for.  The document in reference is the text that make up all the reviews for a given business.  Next <strong>the dictionary serialized into a corpus</strong>, another class that was provided by the Gensim module, which was necessary before it could be run through the LDA model.  In the corpus the words were vectorized in a format more friendly to the LDA model.  Both the dictionary and the corpus were saved to disk, the processing time on this particular dataset was just over 15 minutes to create these two files.  <strong>For the LDA modeling the corpus and dictionary were inputted into the gensim LDA model with 100 topics specified.  These topics were created by the model based on words that appear in the documents, so the hope was that the eventual result would be not only that businesses were grouped together based on obvious things like 'Mexican food' or 'Fast food' but also more subtle things like the descriptions of the food, type of environment, crowd of people that go there (ie. night club vs. fancy restaurant), sentiment toward the restuarant beyond just good or bad.</strong>  The processing time of the model took at 15 minutes.  Now that the model had been trained, we feed back in every business to get the vector of probabilities that the given business belongs to each topic.  These vectors were then written to a csv file on the format business_id,probability_vector.  Next <strong>using the scikit module in python the csv of probabilities was read into a ball tree so that it could be queried for a K-Nearest Neighbors search</strong>, the number of neighbors returned for a query is set to 11, so it will return the business itself as well as its 10 closest neighbors.  The creation of the tree takes under a minute.  To query the tree you then need to feed in a business name that is part of the original dataset.  It will look up the business in the tree and return its neighbors.  The lookup is possible because the probability vectors are stored in memory, so the vector is loaded for the given business.  The results are then reported in descending order. </p>
+
+            <hr>
+
+            <h3 id="resultstesting"> Results &amp; Testing </h3>
+            <p> Here are 34 randomly selected topics from the LDA model.  Each topic is accompanied by the 10 words most common to that topic and the probabilities for each word to indicate a topic.  While there are words common to almost every topic like 'good', 'food', and 'get', you also see trends emerge in each topic with more distinct words like 'surfer', 'truck', 'library', 'guitar', and 'canyon' that may capture things that models trained on categories or attrributes might not have been able to define.
+            <table>
+                <tr> <th> TOPIC # </th> <th> FEATURES </th> </tr>
+                <tr><td>41</td><td> 0.036*nail + 0.020*massag + 0.018*pedicur + 0.014*spa + 0.013*place + 0.012*salon + 0.009*manicur + 0.009*polish + 0.008*time + 0.008*great </td></tr>
+                <tr><td>55</td><td> 0.018*store + 0.009*find + 0.008*like + 0.008*it + 0.008*price + 0.008*place + 0.008*on + 0.007*go + 0.007*great + 0.007*shop </td></tr>
+                <tr><td>91</td><td> 0.016*cuban + 0.011*carli + 0.011*place + 0.007*yuca + 0.007*good + 0.006*cubano + 0.006*it + 0.006*like + 0.006*food + 0.005*reali </td></tr>
+                <tr><td>4</td><td> 0.084*truck + 0.026*cigar + 0.011*leash + 0.010*smoke + 0.008*food + 0.006*aiko + 0.004*yoli + 0.004*get + 0.004*great + 0.004*good </td></tr>
+                <tr><td>44</td><td> 0.010*food + 0.008*place + 0.007*rosita + 0.007*good + 0.006*like + 0.006*go + 0.006*order + 0.005*great + 0.005*on + 0.004*servic </td></tr>
+                <tr><td>11</td><td> 0.056*bbq + 0.025*pork + 0.022*rib + 0.019*brisket + 0.017*ber + 0.016*sauc + 0.015*pule + 0.013*good + 0.011*meat + 0.010*place </td></tr>
+                <tr><td>45</td><td> 0.051*sum + 0.050*dim + 0.012*place + 0.012*cart + 0.010*food + 0.008*good + 0.006*chines + 0.006*it + 0.006*cfu + 0.005*dimsum </td></tr>
+                <tr><td>7</td><td> 0.012*place + 0.010*good + 0.010*food + 0.010*like + 0.008*it + 0.007*on + 0.005*time + 0.005*go + 0.005*dont + 0.004*reali </td></tr>
+                <tr><td>24</td><td> 0.030*church + 0.029*skin + 0.009*product + 0.008*kierland + 0.008*duan + 0.007*facial + 0.005*theresa + 0.005*servic + 0.004*worship + 0.004*go </td></tr>
+                <tr><td>29</td><td>  0.013*place + 0.012*food + 0.010*it + 0.008*time + 0.008*chicken + 0.007*good + 0.007*like + 0.007*go + 0.007*reali + 0.006*on </td></tr>
+                <tr><td>27</td><td> 0.007*order + 0.006*food + 0.005*good + 0.005*place + 0.005*great + 0.004*go + 0.004*like + 0.004*restaur + 0.004*dish + 0.004*back </td></tr>
+                <tr><td>62</td><td> 0.027*cake + 0.023*cupcak + 0.012*chocol + 0.009*on + 0.008*like + 0.008*frost + 0.007*it + 0.007*go + 0.007*yoga + 0.006*love </td></tr>
+                <tr><td>23</td><td> 0.052*wede + 0.025*flower + 0.020*florist + 0.009*beauti + 0.008*arang + 0.006*ceremoni + 0.006*bride + 0.006*us + 0.006*invit + 0.006*rose </td></tr>
+                <tr><td>72</td><td> 0.039*casino + 0.007*slot + 0.006*gambl + 0.005*gadzok + 0.005*good + 0.004*food + 0.004*citizen + 0.004*place + 0.004*like + 0.004*go </td></tr>
+                <tr><td>32</td><td> 0.035*car + 0.011*wash + 0.009*time + 0.009*servic + 0.009*would + 0.008*get + 0.007*work + 0.007*us + 0.007*gui + 0.007*back </td></tr>
+                <tr><td>43</td><td> 0.009*it + 0.008*on + 0.007*go + 0.007*place + 0.006*like + 0.006*great + 0.006*food + 0.006*good + 0.005*time + 0.005*get </td></tr>
+                <tr><td>78</td><td> 0.016*piza + 0.015*good + 0.010*food + 0.009*place + 0.009*great + 0.008*go + 0.008*time + 0.008*oregano + 0.008*it + 0.007*like </td></tr>
+                <tr><td>16</td><td> 0.012*mimi + 0.004*food + 0.003*good + 0.003*on + 0.003*go + 0.003*place + 0.003*time + 0.003*great + 0.002*like + 0.002*it </td></tr>
+                <tr><td>36</td><td> 0.082*tea + 0.043*boba + 0.022*filipino + 0.007*smothi + 0.007*lumpia + 0.006*place + 0.006*mekong + 0.006*drink + 0.005*milk + 0.005*it </td></tr>
+                <tr><td>80</td><td> 0.021*steak + 0.010*good + 0.010*order + 0.008*servic + 0.008*food + 0.007*great + 0.007*potato + 0.007*us + 0.007*rib + 0.006*diner </td></tr>
+                <tr><td>34</td><td> 0.023*pita + 0.022*food + 0.017*humu + 0.016*gyro + 0.014*good + 0.012*place + 0.012*chicken + 0.011*greek + 0.009*salad + 0.008*great </td></tr>
+                <tr><td>8</td><td> 0.019*carl + 0.016*jr + 0.009*fatburg + 0.007*food + 0.005*burger + 0.004*on + 0.004*like + 0.004*place + 0.004*good + 0.003*it </td></tr>
+                <tr><td>97</td><td> 0.004*good + 0.004*place + 0.004*on + 0.003*ski + 0.003*food + 0.003*great + 0.003*like + 0.003*go + 0.002*order + 0.002*time </td></tr>
+                <tr><td>50</td><td> 0.003*place + 0.003*tsk + 0.003*dojo + 0.002*good + 0.002*food + 0.002*it + 0.002*aikido + 0.002*like + 0.002*great + 0.002*get </td></tr>
+                <tr><td>21</td><td> 0.111*bowl + 0.010*lane + 0.009*alei + 0.007*genghi + 0.007*place + 0.006*time + 0.006*go + 0.005*it + 0.005*get + 0.005*food </td></tr>
+                <tr><td>54</td><td> 0.009*time + 0.008*go + 0.008*great + 0.008*work + 0.007*get + 0.007*place + 0.007*on + 0.006*like + 0.006*it + 0.006*servic </td></tr>
+                <tr><td>63</td><td> 0.012*instrument + 0.009*guitar + 0.006*place + 0.005*frybread + 0.005*like + 0.005*time + 0.005*go + 0.005*get + 0.005*would + 0.004*on </td></tr>
+                <tr><td>19</td><td> 0.014*drink + 0.011*bar + 0.010*good + 0.010*place + 0.009*great + 0.008*it + 0.007*us + 0.007*on + 0.007*time + 0.006*like </td></tr>
+                <tr><td>53</td><td> 0.032*movi + 0.022*seat + 0.021*theater + 0.016*show + 0.016*ticket + 0.013*se + 0.009*go + 0.009*it + 0.008*like + 0.008*get </td></tr>
+                <tr><td>92</td><td> 0.010*whataburg + 0.005*europa + 0.004*place + 0.004*price" + 0.003*like + 0.002*good + 0.002*it + 0.002*order + 0.002*tarot + 0.002*food </td></tr>
+                <tr><td>77</td><td> 0.011*place + 0.011*good + 0.010*it + 0.008*roi + 0.007*food + 0.006*like + 0.006*time + 0.005*go + 0.005*great + 0.005*on </td></tr>
+                <tr><td>76</td><td> 0.010*it + 0.010*good + 0.009*like + 0.009*place + 0.007*on + 0.007*food + 0.007*time + 0.006*order + 0.006*go + 0.006*great </td></tr>
+                <tr><td>35</td><td> 0.048*librari + 0.015*scot + 0.011*canyon + 0.010*lake + 0.009*bok + 0.008*pueblo + 0.007*branch + 0.006*surfer + 0.005*comput + 0.004*it </td></tr>
+            </table>
+            </p>
+
+            <p> We were very excited by the power of our recommendation engine. We expected it to recommend businesses successfully, but the accuracy was pretty awesome. Here are some highlights:</p>
+                <h4> Results </h4>
+                <p>
+                    When our recommendation engine loads, it prompts the user by printing <em> Ready for queries </em>. The user can then search for business recommendation by typing any business name. 
+                    <div class="shell">
+                        <p> Ready for queries <br>
+                            >>> Casey Jones Grill <br>
+                            Recommendations for Casey Jones Grill
+                            <ol>
+                                <li> Zipps Sports Grill </li>
+                                <li> Blue 32 Sports Grill </li>
+                                <li> Lucky Lou's </li>
+                                <li> K O'Donnell's American Bar &amp; Grill </li>
+                                <li> Tilted Kilt Pub &amp; Eatery </li>
+                                <li> Vine Tavern &amp; Eatery </li>
+                                <li> Philly's Sports Bar &amp; Grill </li>
+                                <li> Teakwoods Tavern &amp; Grill </li>
+                                <li> Majerle's Sports Grill </li>
+                                <li> Ruby Tuesday </li>
+                            </ol>
+                        </p>
+                    </div>
+                    <h4> Robustness of Results</h4>
+                    <p>
+                        <table class="table">
+                            <tr><th>Name</th><th>Category Score</th><th>Attribute Score</th><th>Star Difference with Queried</th></tr>
+                            <tr><td>Zipps Sports Grill</td><td>0.708</td><td>0.666</td><td>-0.5</td></tr>
+                            <tr><td> Blue 32 Sports Grill </td><td>0.625</td><td>0.666</td><td>0.5</td></tr>
+                            <tr><td>Lucky Lou's</td><td>0.542</td><td>0.666</td><td>0</td></tr>
+                            <tr><td> K O'Donnell's American Bar &amp; Grill </td><td>0.666</td><td>0.666</td><td>0.0</td></tr>
+                            <tr><td> Tilted Kilt Pub &amp; Eatery </td><td>0.708</td><td>0.833</td><td>-1.0</td></tr>
+                            <tr><td> Vine Tavern &amp; Eatery </td><td>0.666</td><td>0.333</td><td>-0.5</td></tr>
+                            <tr><td> Philly's Sports Bar &amp; Grill </td><td>0.625</td><td>0.666</td><td>0.0</td></tr>
+                            <tr><td> Teakwoods Tavern &amp; Grill </td><td>0.542</td><td>0.333</td><td>0.0</td></tr>
+                            <tr><td> Majerle's Sports Grill </td><td>0.625</td><td>0.666</td><td>-0.5</td></tr>
+                            <tr><td> Ruby Tuesday </td><td>0.208</td><td>0.333</td><td>-1.5</td></tr>
+                        </table>
+
+                        <table class="table">
+                            <tr><td>User ID</td><td>Sentiment on Queried Business</td><td>Sentiment on Recommended Businesses</td></tr>
+                            <tr><td>0N0ngSQ8Njxfuvdxm1RpFA</td><td>18.0</td><td>["45puCRQ6Vh_IIAy7kkfFDQ", 2.0], ["r8CwFUEQtL8gAT9KHnNhuw", 19.0]</td></tr>
+                            <tr><td>A_O8wZOsMTPwyeYA4-Rsow</td><td>2.0</td><td>["45puCRQ6Vh_IIAy7kkfFDQ", -1.0]</td></tr>
+                            <tr><td>DrWLhrK8WMZf7Jb-Oqc7ww</td><td>20.0</td><td>["01cEFI5Pq_RyEwM3GSTopQ", 9.0], ["QVR7dsvBeg8xFt9B-vd1BA", -7.0], ["XyE2QzPQjhvMXpSyw5Kvog", 26.0], ["drqCrnSqtGffJ1z60aWkxg", 15.0], ["zDfaNgSYLn-TwquB5A6AaA", 24.0]</td></tr>
+
+                        </table>
+                    </p>
+                    <br>
+                    <p> <a href="http://caseyjonesgrill.com">Casey Jones Grill</a> is a sports bar in Phoenix, AZ. With a Green Bay packers theme and 4.0 stars, it's definitely a great place to enjoy some bar food and watch the game. Here are images of the first two recommendations to someone who likes the Casey Jones Grill (Zipps Sports Grill on the right, Blue 32 Sports Grill on the left). These places look almost identical and match the ambiance and environment of the Casey Jones Grill quite well.
+                    </p> 
+                    <img src="http://www.azcentral.com/i/D/9/C/PHP504A266676C9D.jpg"/><img src="http://s3-media3.ak.yelpcdn.com/bphoto/1A06bdpYXM5Tge_0aanWFA/l.jpg"/>
+
+                    <div class="shell">
+                        <p> Ready for queries <br>
+                            >>> Central Nails <br>
+                            Recommendations for Central Nails
+                            <ol>
+                                <li> AZ Tips &amp; Toes Nails </li>
+                                <li> Allure Nail </li>
+                                <li> Win Nails </li>
+                                <li> 7 Days Spa &amp; Nails </li>
+                                <li> Maiya's Nail Salon </li>
+                                <li> Foxy Nails </li>
+                                <li> Lynn's Nails &amp; Spa </li>
+                                <li> Super Touch Nails </li>
+                                <li> Gel-Q Nail &amp; Spa </li>
+                                <li> VS Nails &amp; Spa </li>
+                            </ol>
+                        </p>
+                    </div>
+                    <h4> Robustness of Results</h4>
+                    <p>
+                        <table class="table">
+                            <tr><th>Name</th><th>Category Score</th><th>Attribute Score</th><th>Star Difference with Queried</th></tr>
+                            <tr><td>Central Nails</td><td>1.0</td><td>1.0</td><td>0.0</td></tr>
+                            <tr><td>AZ Tip & Toes Nails</td><td>0.75</td><td>1.0</td><td>-1.5</td></tr>
+                            <tr><td>Allure Nail</td><td>0.75</td><td>1.0</td><td>-2.0</td></tr>
+                            <tr><td>Win Nails</td><td>0.75</td><td>1.0</td><td>-1.0</td></tr>
+                            <tr><td>7 Day Spa & Nails</td><td>0.75</td><td>1.0</td><td>-1.0</td></tr>
+                            <tr><td>Maiya's Nail Salon</td><td>0.5</td><td>1.0</td><td>-1.0</td></tr>
+                            <tr><td>Foxy Nails</td><td>0.5</td><td>1.0</td><td>-0.5</td></tr>
+                            <tr><td>Lynn's Nails & Spa</td><td>0.25</td><td>1.0</td><td>-1.0</td></tr>
+                            <tr><td>Super Touch Nails</td><td>0.75</td><td>1.0</td><td>-1.0</td></tr>
+                            <tr><td>Gel-Q Nail & Spa</td><td>0.75</td><td>1.0</td><td>-1.0</td></tr>
+                            <tr><td>VS Nails & Spa</td><td>0.75</td><td>1.0</td><td>-0.5</td></tr>
+                        </table>
+                    </p>
+
+
+                
+                    <div class="shell">
+                        <p> Ready for queries <br>
+                            >>> Sheraton Crescent Hotel <br>
+                            Recommendations for Sheraton Crescent Hotel
+                            <ol>
+                                <li> Scottsdale Hilton Resort &amp; Villas </li>
+                                <li> Wyndham Phoenix </li>
+                                <li> Embassy Suites Hotel </li>
+                                <li> Hilton Garden Inn Scottsdale </li>
+                                <li> Holiday Inn &amp; Suites </li>
+                                <li> Scottsdale Resort &amp; Conference Center </li>
+                                <li> Sheraton Phoenix Downtown Hotel </li>
+                                <li> Sheraton Phoenix Airport Hotel Tempe </li>
+                                <li> Red Roof Inn </li>
+                                <li> Hyatt Regency Phoenix </li>
+                            </ol>
+                        </p>
+                    </div>
+
+                    <h4>Robustness of Results</h4>
+                    <p>
+                    <table class="table">
+                    <tr><th>Name</th><th>Category Score</th><th>Attribute Score</th><th>Star Difference with Queried</th></tr>
+                    <tr><td>Sheraton Crescent Hotel</td><td>1.0</td><td>1.0</td><td>0.0</td></tr>
+                    <tr><td>Scottsdale Hilton Resort & Villas</td><td>0.666</td><td>1.0</td><td>0.0</td></tr>
+                    <tr><td>Wyndham Phoenix</td><td>0.0</td><td>1.0</td><td>0.0</td></tr>
+                    <tr><td>Embassy Suites Hotel</td><td>1.0</td><td>1.0</td><td>0.0</td></tr>
+                    <tr><td>Hilton Garden Inn Scottsdale</td><td>0.666</td><td>1.0</td><td>0.5</td></tr>
+                    <tr><td>Holiday Inn & Suites</td><td>0.666</td><td>1.0</td><td>0.5</td></tr>
+                    <tr><td>Scottsdale Resort & Conference Center</td><td>1.0</td><td>0.333</td><td>0.0</td></tr>
+                    <tr><td>Sheraton Phoenix Downtown Hotel</td><td>0.666</td><td>1.0</td><td>1.0</td></tr>
+                    <tr><td>Sheraton Phoenix Airport Hotel Tempe</td><td>0.666</td><td>1.0</td><td>0.0</td></tr>
+                    <tr><td>Red Roof Inn</td><td>0.333</td><td>1.0</td><td>0.0</td></tr>
+                    <tr><td>Hyatt Regency Phoenix</td><td>0.666</td><td>1.0</td><td>0.0</td></tr>
+                    </table>
+                    <table class="table">
+                            <tr><td>User ID</td><td>Sentiment on Queried Business</td><td>Sentiment on Recommended Businesses</td></tr>
+                            <tr><td>3uJgPBU8tlGV6bk96sqAXA</td><td>6.0</td><td>["FgyBmc-XS_ViFAf8Wy25yA", 1.0]</td></tr>
+                            <tr><td>WxO2x4xGbHfeWfU_MbuzTQ</td><td>9.0</td><td>["FgyBmc-XS_ViFAf8Wy25yA", 24.0], ["VgtEm_L23SNZEsyNMKwhog", 17.0]</td></tr>
+                        </table>
+                    </p>
+                <h4> Testing </h4>
+                <p> It is difficult to define the accuracy of results for a reccomendation system as the topics are not always concrete or able to be defined.  To see if our results seemed reasonable we would run them through a few different scoring methods. <strong>First we would look at the 'categories'</strong> defined in the yelp dataset for the business that was being seached, using this we then went through the results and found the percentage of matches for each business returned.  These faired relatively well, with the vast majority returning more than 50% matches.  Next <strong>we also looked at the 'attributes'</strong> defined in the yelp dataset for each business.  These include things like 'wifi', 'kid-friendly', 'alcohol', 'drive-through', etc.  The issue we ran into here was that it was not a uniform dictionary of attributes to values in every business so there were some businesses that did not have certain attribute keys on which to compare. <strong> Using the attributes of the first business, we went through the businesses in the results and created a binary vector over whether the value for a given attribute key matched</strong>, if the business in question did not have an attribute key that the searched business did, a 0 was recorded for that attribute.  Even with the fact that the attribute keys in the dataset were not consistent, we saw in our results that most of the businesses returned had over 50% matches for the attribute section.  Lastly we thought we would check how the ratings compared, while this does not seem as important as people probably are always just looking for the best, we figured if you search a business because you want something comparable to it, that our model would return something of similar rating.  To do this we simply subtracted the result rating from the searched business's rating to get a difference in the two.  In our testing we never saw the differences cluster around +/- .5, which is reasonably close.  To round out our testing we did one last method where <strong>we took all the results from a search, got all the reviews from those businesses, then grouped them by user to see if users that had written a review for one of the businesses, had also written one for another, and then see how they compared</strong>.  We felt this method captures the idea of a recommendation system, as it addresses the user's point of view.  It shows that the results that are returned are businesses that the same type of user will go to (and review) and review in a similar manner, which is what we were trying to accomplish with our recommendation system.  <strong>We were able to quantify these results by running the reviews written by the same user through sentiment analysis and comparing the results.</strong> This should be taken with a grain of salt though because the nature of reviews on yelp can vary from full reviews to one sentence thoughts, they are also subject to many spelling errors that can throw off a sentiment analysis classifier. </p>
+
+                <hr>
+
+                <h3 id="visualization"> Visualization </h3> 
+                <p>
+                Below is a large visualization of a KMeans clustering we performed on our LDA feature set. With 30 clusters, we gathered the 10 closest businesses to each centroid.                 
+                <table>
+                    <tr>
+                        <th> Starbucks Coffee </th> <th> Mountainside Fitness </th> <th> Golden Spoon Frozen Yogurt </th> <th> Thai Hut </th>
+                    </tr>
+                    <tr>    
+                        <td>
+                            <ul>
+                                <li> Starbucks </li>
+                                <li> Starbucks Coffee </li>
+                                <li> Dutch Bros Coffee </li>
+                                <li> Starbucks </li>
+                                <li> Starbucks </li>
+                                <li> Giant Coffee </li>
+                                <li> Press Coffee Roasters </li>
+                                <li> The Coffee Bean &amp; Tea Leaf </li>
+                                <li> Dutch Bros Coffee </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li> LA Fitness </li>
+                                <li> Gracie United Jiu-Jitsu </li>
+                                <li> YMCA </li>
+                                <li> LA Fitness </li>
+                                <li> Pro Edge Boxing </li>
+                                <li> LA Fitness </li>
+                                <li> Physix </li>
+                                <li> 24 Hour Fitness </li>
+                                <li> Tempe Family YMCA </li>
+                            </ul>
+                        </td>                            
+                        <td>
+                            <ul>
+                                <li> Yogurtology </li>
+                                <li> Aloha Yogurt </li>
+                                <li> Mojo Yogurt </li>
+                                <li> Yogurtland </li>
+                                <li> Yogurt Builderz </li>
+                                <li> Yogurtology </li>
+                                <li> Ocean Blue Frozen Yogurt </li>
+                                <li> Zoyo </li>
+                                <li> Yogurtology </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li> Noodles Ranch </li>
+                                <li> Pho Thanh </li>
+                                <li> Saigon Pho </li>
+                                <li> BlueMoon Vietnamese Kitchen </li>
+                                <li> Maxim Restaurant </li>
+                                <li> Thai'd Up </li>
+                                <li> Thai Rama </li>
+                                <li> Thai Lahna Restaurant </li>
+                                <li> Thai E-San </li>
+                            </ul>
+                        </td>                        
+                    </tr>
+                </table>
+
+            </p>
+            <div id="chart"></div>
+
+        <h3><a href="part1.html"> <<< Back to Part 1 </a></h3>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+	<script>
+        var width = 960,
+            height = 800;
+
+        var color = d3.scale.category20();
+
+        var chart = d3.select("#chart")
+                    .append("svg")
+                    .attr({
+                        "width": "100%",
+                        "height": 800
+                    })
+                    .attr("viewBox", "0 0 " + width + " " + height)
+                    .attr("preserveAspectRatio", "xMidYMid meet")
+                    .attr("pointer-events", "all")
+                    .call(d3.behavior.zoom().on("zoom", redraw));
+
+        var svg = chart.append("svg:g");
+
+        function redraw() {
+            svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")");
+        }
+
+        var force = d3.layout.force()
+            .gravity(0.05)
+            .distance(100)
+            .charge(-100)
+            .size([width, height]);
+
+        d3.json("graph.json", function(error, json) {
+
+        force
+            .nodes(json.nodes)
+            .links(json.links)
+            .start();
+
+        var link = svg.selectAll(".link")
+            .data(json.links)
+            .enter().append("line")
+            .attr("class", "link");
+
+        var node = svg.selectAll(".node")
+            .data(json.nodes)
+            .enter()
+            .append("g")
+            .attr("class", "node")
+            .call(force.drag);
+
+        node.append("circle")
+            .attr("r", function(d) { return d.size; })
+            .style("fill", function(d) { return color(d.group); });
+
+        node.append("text")
+            .attr("dx", 12)
+            .attr("dy", ".35em")
+            .text(function(d) { return d.name; });
+
+        node.append("title")
+            .text(function(d) { return d.biz_id; });
+
+        force.on("tick", function() {
+            link.attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+
+            node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        });
+      });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <style>
+        body { margin: 20px 10px; }
+        table { border: 1px solid black;}
+        td, th { padding: 5px 10px; border: 1px solid black; text-align: center; font-size: 14px; background-color: white;}
+        .section { margin: auto; padding: 10px 30px;}
+        #toc li { margin-left: 15px; }
+        caption { font-size: 14px; font-weight: bold; margin-bottom: 4px;}
+        .results_block { border: 1px solid rgb(210,210,210); border-radius: 10px; padding: 15px; background-color: rgb(245,245,245);}
+        .results_block table {margin: auto;}
+        #unfinished {color: red;}
+        .results_block td { font-size: 10px; padding: 3px; }
+        #topart2 {float:right;}
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="page-header center">
+                <h1>Part 1: Search Engine</h1>
+                <h4><small>by Jerome de Nijs (jadenijs), Wendy Ginsberg (wginsber), Miraj Shah (mgs3)</small></h4>
+            </div>
+
+            <div>
+                <ul id="toc" class="nav navbar-nav">
+                    <li><a href="#inverted_index"> Inverted Index</a></li>
+                    <li><a href="#processing_reviews"> Processing Reviews</a> </li> 
+                    <li><a href="#responding_to_queries"> Responding to Queries</a> </li>
+                    <li><a href="#ranking_results"> Ranking Results</a> </li>
+                </ul>                       
+            <div> 
+
+            <br>
+            <hr> 
+            
+            <div class="section" id="inverted_index">
+                <h2> Inverted Index </h2>
+                <h3> Format </h3>
+                <p> Our inverted index is a csv file. The original review data file was <strong> 303.7 MB </strong> whereas our inverted index csv is <strong> 547 MB</strong>, which is <strong> 1.8x</strong> the size. The csv file was formatted into two columns. The first column was a word inputted as a string. The second column was a string that contained all of the instances of the word in the first column (business_id,review_id,position(s);). <em> Note: All positions for one business_id, review_id pair are appended to the end of the string. </em> Here is some example input from our inverted index file:
+                </p> 
+                <div class="results_block">
+                    <p> <strong> Entry from Inverted Index </strong> <br> stomach,"Xq9tkiHhyN_aBFswFeGLvA,51,102;H7KzlC0-o1wIhlGg-Me5Ag,178,32;d52zg-S0o940WUCK-nNiKw,222,61;P7wKlbSRsoRrfH3DFOY08A,832,82;"<br> <br> 
+                    <strong> Parsed Entry </strong>
+                    <br> 
+                        <table>
+                            <caption> WORD: STOMACH </caption>
+                            <tr>
+                                <th>Instance</th> <th>Business ID</th> <th>Review ID</th> <th>Position(s)</th>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>Xq9tkiHhyN_aBFswFeGLvA</td> <td>51</td> <td>102</td>
+                            </tr>
+                            <tr>
+                                <td>2</td> <td>H7KzlC0-o1wIhlGg-Me5Ag</td> <td>178</td> <td>32</td>
+                            </tr> 
+                            <tr>
+                                <td>3</td> <td>d52zg-S0o940WUCK-nNiKw</td> <td>222</td> <td>61</td>
+                            </tr>  
+                            <tr>
+                                <td>4</td> <td>P7wKlbSRsoRrfH3DFOY08A</td> <td>832</td> <td>82</td>
+                            </tr>                   
+                        </table> 
+                    </p>
+                </div>
+                <h3> Storage </h3>
+                <p> Our inverted index is stored in a Python dictionary. The dictionary has the same format of our csv file in that the keys are words and the values are strings that include all occurences of that word. They are in the format "business_id,review_id,position(s);" </p>
+                
+            </div>
+            
+            <hr>
+
+            <div class="section" id="processing_reviews">
+                <h2> Processing the Reviews </h2>
+                <p> For each line, or review, in the json file, the text is tokenized. The tokenizer strips punctuation, filters out stopwords, lowercases the text, removes non-ascii characters, removes letters that exist in a series of 3 or more, then runs it through the porter stemmer. The tokenizer also returns the original position of each word in the review before stop words are filtered out to return accurate results for phrase queries. </p>
+                <p> After the text is tokenized, the words are inserted into a dictionary. This dictionary will hold key,value pairs of words and their locations (exactly like the inverted index csv file). The value is of the format "[business_id, review_id, position(s)],..." where the business_id refers the to the internal Yelp id for the business that is being reviewed. The review_id is zero-indexed and it refers to the line of the json file that the review is on. The position list is comma separated, and each position is also zero-indexed and assigned by the tokenizer. As part of the pre-processing for each word, we precalculate the tf-idf's with respect to each business which has at least one review containing that word, and store it under each word as a map of business_id -> tf_idf. When calculating tf-idf, we treat all reviews for a business as one single document.
+                </p> 
+            </div>
+            
+            <hr>
+
+            <div class="section" id="responding_to_queries">
+                <h2> Responding to Queries </h2>
+                <p> Whenever a query comes through, the program parses the input to figure out what type of query is being made. The search query is tokenized and passed into a specific query function as an array of words. </p>
+                <h3> Free Text Query (FTQ) </h3>                
+                <p> As part of the pre-processing, for each word we have access to a dictionary of business ID -> tf-idf score; the map only contains business_ids which have at least one review which contains the word. Thus, we have easy access to a list of business ids which contain each word by getting the keys of this map. Starting with the lists of business ids for the first and second words, we find the intersection of this list, and iteratively take the intersection with the business ID list of the next word until either (1) the intersection is empty or (2) we have reached the end of the query. We then pass this list of matching business IDs to a scoring function, discussed below.</p> 
+                <h3> One Word Query (OWQ) </h3>
+                <p>One-word queries are a special case of free text queries, where we simply retrieve the list of business IDs whose reviews contain the word. If the single word is passed in as quoted phrase query, we use the same methodology.</p>
+                <h3> Phrase Query (PQ) </h3>                
+                <p> When given a phrase query, we first find the intersection of the reviews that contain the first and second words of the query using an O(min(n,m)) algorithm (where n = number of reviews for word 1 and m = number of reviews for word 2); the intersection is found by matching review IDs. We then gather tuples of the position lists for word 1 and word 2, and pass them into a function that checks to see if any of the pairs of positions of word 1 and word 2 are consecutive. If there is a consecutive occurence of both words, then we add the business ID, review ID and position list of the second word to an intersection list, and iteratively carry out the same intersection process with the next word(s) and the intersection list until (1) the intersection list is empty or (2) we have reached the end of the query. We then gather the business IDs from the intersection list and pass it into a scoring function. </p>
+                <h3> Scoring </h3>
+                <p> To calculate the tf-idf score for a query for each matching business, we look up the tf-idf mapping (word->business id->tf-idf) for each word and sum up the individual scores. The term frequency for a given word and a given business is calculated as the sum of all occurrences of the word in all of the business's reviews. The IDF score for a given word is calculated as the log of the total number of reviews divided by the total number of reviews in which the word occurs.</p>
+                <p> We optionally multiply the tf-idf score for the query for each business by a heuristic, which is discussed in the next section </p>       
+            </div>
+            
+            <hr>
+            
+            <div class="section" id="ranking_results">
+                <h2> Ranking Results </h2>
+                <h3> Algorithm </h3>
+                <p> Given the tf-idf scores for the all of businesses that matched that query, we optionally multiply the scores by a heuristic: tf-idf sum * log(review_count) * stars. This allows us to give more relevance to businesses with greater average star ratings and larger numbers of reviews, which are two extremely important factors when choosing a restaurant on Yelp. The matching businesses are sorted on these scores, after which we return the top 10 results.</p>
+                <h3> Examples </h3>
+                <div class="results_block">
+                    <h4> One Word Query (OWQ) </h4>
+                    <h5> <strong> Search Term A: </strong> taco </h5>
+                    <h5> <small> Before Heuristic Added </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> La Santisima Gourmet Taco Shop </td> <td> zp713qNhx8d9KCJJnrw1xA </td> <td> 401 W Clarendon Ave <br> Phoenix, AZ 85013 </td> <td> 4.5 </td> <td> 435 </td> <td> Mexican, Restaurants </td> <td> <a href="http://www.yelp.com/biz/la-santisima-gourmet-taco-shop-phoenix">http://www.yelp.com/biz/la-santisima-gourmet-taco-shop-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Gallo Blanco </td> <td> -sC66z4SO3tR7nFCjfQwuQ </td> <td> 401 W Clarendon Ave <br> Phoenix, AZ 85013 </td> <td> 4.0 </td> <td> 731 </td> <td> Bars, Cafes, Nightlife, Restaurants </td> <td> <a href="http://www.yelp.com/biz/gallo-blanco-phoenix">http://www.yelp.com/biz/gallo-blanco-phoenix</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Tacos Atoyac </td> <td> wN_wAXWg8W94v04eqijy6g </td> <td> 1830 W Glendale Ave <br> Phoenix, AZ 85021 </td> <td> 4.5 </td> <td> 299 </td> <td> Mexican, Restaurants </td> <td> <a href="http://www.yelp.com/biz/tacos-atoyac-phoenix">http://www.yelp.com/biz/tacos-atoyac-phoenix</a> </td>
+                        </tr>                                          
+                    </table>        
+                    <h5> <small> After </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> La Santisima Gourmet Taco Shop </td> <td> zp713qNhx8d9KCJJnrw1xA </td> <td> 401 W Clarendon Ave <br> Phoenix, AZ 85013 </td> <td> 4.5 </td> <td> 435 </td> <td> Mexican, Restaurants </td> <td> <a href="http://www.yelp.com/biz/la-santisima-gourmet-taco-shop-phoenix">http://www.yelp.com/biz/la-santisima-gourmet-taco-shop-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Gallo Blanco </td> <td> -sC66z4SO3tR7nFCjfQwuQ </td> <td> 401 W Clarendon Ave <br> Phoenix, AZ 85013 </td> <td> 4.0 </td> <td> 731 </td> <td> Bars, Cafes, Nightlife, Restaurants </td> <td> <a href="http://www.yelp.com/biz/gallo-blanco-phoenix">http://www.yelp.com/biz/gallo-blanco-phoenix</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Tacos Atoyac </td> <td> wN_wAXWg8W94v04eqijy6g </td> <td> 1830 W Glendale Ave <br> Phoenix, AZ 85021 </td> <td> 4.5 </td> <td> 299 </td> <td> Mexican, Restaurants </td> <td> <a href="http://www.yelp.com/biz/tacos-atoyac-phoenix">http://www.yelp.com/biz/tacos-atoyac-phoenix</a> </td>
+                        </tr>                                          
+                    </table>
+           
+                    <br>
+                    <h5> <strong> Search Term B: </strong> dumplings </h5>                   
+                    <h5> <small> Before Heuristic Added </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Chou's Kitchen </td> <td> jgWAgT7LWPTf5wju9Q-kiw </td> <td> 910 N Alma School Rd <br> Chandler, AZ 85224 </td> <td> 4.0 </td> <td> 119 </td> <td> Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/chous-kitchen-chandler">http://www.yelp.com/biz/chous-kitchen-chandler</a> </td>
+                        </tr>
+                        <tr>
+                            <td> True Food Kitchen </td> <td> qjmCVYkwP-HDa35jwYucbQ </td> <td> 2502 E Camelback Rd <br> Phoenix, AZ 85016 </td> <td> 4.0 </td> <td> 560 </td> <td> Vegetarian, American (New), Salad, Restaurants </td> <td> <a href="http://www.yelp.com/biz/true-food-kitchen-phoenix">http://www.yelp.com/biz/true-food-kitchen-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> China Magic Noodle House  </td> <td> jfDBaBgwINrGYAo8p2MJ4g </td> <td> 2015 N Dobson Rd <br> Chandler, AZ 85224 <br> Phoenix, AZ 85018 </td> <td> 4.0 </td> <td> 208 </td> <td> Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/china-magic-noodle-house-chandler">http://www.yelp.com/biz/china-magic-noodle-house-chandler</a> </td>
+                        </tr>                                           
+                    </table> 
+                    <h5> <small> After </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Chou's Kitchen </td> <td> jgWAgT7LWPTf5wju9Q-kiw </td> <td> 910 N Alma School Rd <br> Chandler, AZ 85224 </td> <td> 4.0 </td> <td> 119 </td> <td> Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/chous-kitchen-chandler">http://www.yelp.com/biz/chous-kitchen-chandler</a> </td>
+                        </tr>
+                        <tr>
+                            <td> True Food Kitchen </td> <td> qjmCVYkwP-HDa35jwYucbQ </td> <td> 2502 E Camelback Rd <br> Phoenix, AZ 85016 </td> <td> 4.0 </td> <td> 560 </td> <td> Vegetarian, American (New), Salad, Restaurants </td> <td> <a href="http://www.yelp.com/biz/true-food-kitchen-phoenix">http://www.yelp.com/biz/true-food-kitchen-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Beckett's Table  </td> <td> I4bSn5gXsHuSPu7L-d_8nQ </td> <td> 3717 E Indian School Rd <br> Phoenix, AZ 85018 </td> <td> 4.0 </td> <td> 466 </td> <td> American (New), Restaurants </td> <td> <a href="http://www.yelp.com/biz/becketts-table-phoenix">http://www.yelp.com/biz/becketts-table-phoenix</a> </td>
+                        </tr>                                           
+                    </table>                     
+
+                </div>
+                <br>
+
+                <div class="results_block">
+                    <h4> Free Text Query (OWQ) </h4>
+                    <h5> <strong> Search Term A: </strong> fried chicken </h5>
+                    <h5> <small> Before Heuristic Added </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Lo-Lo's Chicken &amp; Waffles </td> <td> K8pM6qQdYu5h6buRE1-_sw </td> <td> 1220 S Central Ave <br> Phoenix, AZ 85003 </td> <td> 4.0 </td> <td> 610 </td> <td> Soul Food, Southern, Restaurants </td> <td> <a href="http://www.yelp.com/biz/lo-los-chicken-and-waffles-phoenix">http://www.yelp.com/biz/lo-los-chicken-and-waffles-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Lo-Lo's Chicken &amp; Waffles </td> <td> uEJQSIjWui-TDWXaGlcqyQ </td> <td> 2765 N Scottsdale Rd <br> Scottsdale, AZ 85257 </td> <td> 4.0 </td> <td> 477 </td> <td> Soul Food, Breakfast &amp; Brunch, Southern, Restaurants </td> <td> <a href="http://www.yelp.com/biz/lo-los-chicken-and-waffles-scottsdale">http://www.yelp.com/biz/lo-los-chicken-and-waffles-scottsdale</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Chino Bandido </td> <td> Zx8_4zKdDBSO3qGrkukBIA </td> <td> 15414 N 19th Ave - Ste K <br> Phoenix, AZ 85023 </td> <td> 4.0 </td> <td> 477 </td> <td> Szechuan, Asian Fusion, Mexican, Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/chino-bandido-phoenix-3">http://www.yelp.com/biz/chino-bandido-phoenix-3</a> </td>
+                        </tr>                                          
+                    </table>
+                    <h5> <small> After </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Lo-Lo's Chicken &amp; Waffles </td> <td> K8pM6qQdYu5h6buRE1-_sw </td> <td> 1220 S Central Ave <br> Phoenix, AZ 85003 </td> <td> 4.0 </td> <td> 610 </td> <td> Soul Food, Southern, Restaurants </td> <td> <a href="http://www.yelp.com/biz/lo-los-chicken-and-waffles-phoenix">http://www.yelp.com/biz/lo-los-chicken-and-waffles-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Lo-Lo's Chicken &amp; Waffles </td> <td> uEJQSIjWui-TDWXaGlcqyQ </td> <td> 2765 N Scottsdale Rd <br> Scottsdale, AZ 85257 </td> <td> 4.0 </td> <td> 477 </td> <td> Soul Food, Breakfast &amp; Brunch, Southern, Restaurants </td> <td> <a href="http://www.yelp.com/biz/lo-los-chicken-and-waffles-scottsdale">http://www.yelp.com/biz/lo-los-chicken-and-waffles-scottsdale</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Chino Bandido </td> <td> Zx8_4zKdDBSO3qGrkukBIA </td> <td> 15414 N 19th Ave - Ste K <br> Phoenix, AZ 85023 </td> <td> 4.0 </td> <td> 477 </td> <td> Szechuan, Asian Fusion, Mexican, Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/chino-bandido-phoenix-3">http://www.yelp.com/biz/chino-bandido-phoenix-3</a> </td>
+                        </tr>                                          
+                    </table>
+                    <br>
+                    <h5> <strong> Search Term B: </strong> chocolate ice cream </h5>
+                    <h5> <small> Before Heuristic Added </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Sweet Republic </td> <td> Bc4DoKgrKCtCuN-0O5He3A </td> <td> 9160 E Shea Blvd <br> Scottsdale, AZ 85260 </td> <td> 4.5 </td> <td> 394 </td> <td> Food, Ice Cream &amp; Frozen Yogurt </td> <td> <a href="http://www.yelp.com/biz/sweet-republic-scottsdale-2">http://www.yelp.com/biz/sweet-republic-scottsdale-2</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Sugar Bowl </td> <td> Snp5LyDO9NeQiuFPOlkavw </td> <td> 4005 N Scottsdale Rd <br> Scottsdale, AZ 85251 </td> <td> 3.5 </td> <td> 244 </td> <td> Food, Ice Cream &amp; Frozen Yogurt </td> <td> <a href="http://www.yelp.com/biz/sugar-bowl-scottsdale">http://www.yelp.com/biz/sugar-bowl-scottsdale</a> </td>
+                        </tr>                         
+                        <tr>
+                            <td> Churn </td> <td> tAmevVP8B7PiWxcJ0PlYVA </td> <td> 5223 N Central Ave <br> Phoenix, AZ 85012 </td> <td> 4.5 </td> <td> 190 </td> <td> Food, Ice Cream &amp; Frozen Yogurt, Coffee &amp; Tea, Desserts </td> <td> <a href="http://www.yelp.com/biz/churn-phoenix-3">http://www.yelp.com/biz/churn-phoenix-3</a> </td>
+                        </tr>                                           
+                    </table>
+                    <h5> <small> After </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Sweet Republic </td> <td> Bc4DoKgrKCtCuN-0O5He3A </td> <td> 9160 E Shea Blvd <br> Scottsdale, AZ 85260 </td> <td> 4.5 </td> <td> 394 </td> <td> Food, Ice Cream &amp; Frozen Yogurt </td> <td> <a href="http://www.yelp.com/biz/sweet-republic-scottsdale-2">http://www.yelp.com/biz/sweet-republic-scottsdale-2</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Churn </td> <td> tAmevVP8B7PiWxcJ0PlYVA </td> <td> 5223 N Central Ave <br> Phoenix, AZ 85012 </td> <td> 4.5 </td> <td> 190 </td> <td> Food, Ice Cream &amp; Frozen Yogurt, Coffee &amp; Tea, Desserts </td> <td> <a href="http://www.yelp.com/biz/churn-phoenix-3">http://www.yelp.com/biz/churn-phoenix-3</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Sugar Bowl </td> <td> Snp5LyDO9NeQiuFPOlkavw </td> <td> 4005 N Scottsdale Rd <br> Scottsdale, AZ 85251 </td> <td> 3.5 </td> <td> 244 </td> <td> Food, Ice Cream &amp; Frozen Yogurt </td> <td> <a href="http://www.yelp.com/biz/sugar-bowl-scottsdale">http://www.yelp.com/biz/sugar-bowl-scottsdale</a> </td>
+                        </tr>                                          
+                    </table>
+                    </div>
+                <br>
+
+                <div class="results_block">
+                    <h4> Phrase Query (OWQ) </h4>
+                    <h5> <strong> Search Term A: </strong> "breakfast sandwich" </h5>
+                    <h5> <small> Before Heuristic Added </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Matt's Big Breakfast </td> <td> ntN85eu27C04nwyPa8IHtw </td> <td> 825 N 1st St <br> Phoenix, AZ 85004 </td> <td> 4.0 </td> <td> 724 </td> <td> Breakfast &amp; Brunch, Restaurants </td> <td> <a href="http://www.yelp.com/biz/matts-big-breakfast-phoenix-2">http://www.yelp.com/biz/matts-big-breakfast-phoenix-2</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> La Grande Orange Grocery </td> <td> R8VwdLyvsp9iybNqRvm94g </td> <td> 4410 N 40th St <br> Phoenix, AZ 85018 </td> <td> 4.0 </td> <td> 507 </td> <td> Food, Grocery, Pizza, Sandwiches, Restaurants </td> <td> <a href="http://www.yelp.com/biz/la-grande-orange-grocery-phoenix">http://www.yelp.com/biz/la-grande-orange-grocery-phoenix</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Breakfast Club </td> <td> 9Y3aQAVITkEJYe5vLZr13w </td> <td> 4400 N Scottsdale Rd <br> Scottsdale, AZ 85251 </td> <td> 3.5 </td> <td> 382 </td> <td> Breakfast &amp; Brunch, American (Traditional), Restaurants </td> <td> <a href="http://www.yelp.com/biz/breakfast-club-phoenix#query:breakfast%20club">http://www.yelp.com/biz/breakfast-club-phoenix#query:breakfast%20club</a> </td>
+                        </tr>                                           
+                    </table>
+                    <h5> <small> After </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Matt's Big Breakfast </td> <td> ntN85eu27C04nwyPa8IHtw </td> <td> 825 N 1st St <br> Phoenix, AZ 85004 </td> <td> 4.0 </td> <td> 724 </td> <td> Breakfast &amp; Brunch, Restaurants </td> <td> <a href="http://www.yelp.com/biz/matts-big-breakfast-phoenix-2">http://www.yelp.com/biz/matts-big-breakfast-phoenix-2</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> La Grande Orange Grocery </td> <td> R8VwdLyvsp9iybNqRvm94g </td> <td> 4410 N 40th St <br> Phoenix, AZ 85018 </td> <td> 4.0 </td> <td> 507 </td> <td> Food, Grocery, Pizza, Sandwiches, Restaurants </td> <td> <a href="http://www.yelp.com/biz/la-grande-orange-grocery-phoenix">http://www.yelp.com/biz/la-grande-orange-grocery-phoenix</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Breakfast Club </td> <td> 9Y3aQAVITkEJYe5vLZr13w </td> <td> 4400 N Scottsdale Rd <br> Scottsdale, AZ 85251 </td> <td> 3.5 </td> <td> 382 </td> <td> Breakfast &amp; Brunch, American (Traditional), Restaurants </td> <td> <a href="http://www.yelp.com/biz/breakfast-club-phoenix#query:breakfast%20club">http://www.yelp.com/biz/breakfast-club-phoenix#query:breakfast%20club</a> </td>
+                        </tr>                                           
+                    </table>
+                    <br>
+                    <h5> <strong> Search Term B: </strong> "fresh ingredients" </h5>
+                    <h5> <small> Before Heuristic Added </small> </h5>
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Nee House Chinese Restaurant </td> <td> ChmqODwuYP1ewjmWXtxtsg </td> <td> 13843 N Tatum Blvd - Ste 15 <br> Phoenix, AZ 85032 </td> <td> 3.5 </td> <td> 108 </td> <td> Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/nee-house-chinese-restaurant-phoenix">http://www.yelp.com/biz/nee-house-chinese-restaurant-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Manuel's Mexican Restaurant </td> <td> I7IfnWW1nXljC4ZGqwPe-w </td> <td> 1111 W Bell Rd <br> Phoenix, AZ 85023 </td> <td> 4.0 </td> <td> 77 </td> <td> Mexican, Restaurants </td> <td> <a href="http://www.yelp.com/biz/manuels-mexican-restaurant-phoenix-4">http://www.yelp.com/biz/manuels-mexican-restaurant-phoenix-4</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Pita Heaven </td> <td> 7-vGQpfj0RcOD-Cy7CXDiA </td> <td> 2580 W Chandler Blvd - Ste 3 <br> Chandler, AZ 85224 </td> <td> 3.5 </td> <td> 52 </td> <td> Greek, Mediterranean, Middle Eastern, Restaurants </td> <td> <a href="http://www.yelp.com/biz/pita-heaven-chandler">http://www.yelp.com/biz/pita-heaven-chandler</a> </td>
+                        </tr>                                          
+                    </table>                     
+                    <h5> <small> After </small> </h5> 
+                    <table>
+                        <tr>
+                            <th> Name </th> <th> Business ID </th> <th> Address </th> <th> Stars </th> <th> Review Count </th> <th> Categories </th> <th> Link </th>
+                        </tr> 
+                        <tr>
+                            <td> Nee House Chinese Restaurant </td> <td> ChmqODwuYP1ewjmWXtxtsg </td> <td> 13843 N Tatum Blvd - Ste 15 <br> Phoenix, AZ 85032 </td> <td> 3.5 </td> <td> 108 </td> <td> Chinese, Restaurants </td> <td> <a href="http://www.yelp.com/biz/nee-house-chinese-restaurant-phoenix">http://www.yelp.com/biz/nee-house-chinese-restaurant-phoenix</a> </td>
+                        </tr> 
+                        <tr>
+                            <td> Manuel's Mexican Restaurant </td> <td> I7IfnWW1nXljC4ZGqwPe-w </td> <td> 1111 W Bell Rd <br> Phoenix, AZ 85023 </td> <td> 4.0 </td> <td> 77 </td> <td> Mexican, Restaurants </td> <td> <a href="http://www.yelp.com/biz/manuels-mexican-restaurant-phoenix-4">http://www.yelp.com/biz/manuels-mexican-restaurant-phoenix-4</a> </td>
+                        </tr>  
+                        <tr>
+                            <td> Pita Heaven </td> <td> 7-vGQpfj0RcOD-Cy7CXDiA </td> <td> 2580 W Chandler Blvd - Ste 3 <br> Chandler, AZ 85224 </td> <td> 3.5 </td> <td> 52 </td> <td> Greek, Mediterranean, Middle Eastern, Restaurants </td> <td> <a href="http://www.yelp.com/biz/pita-heaven-chandler">http://www.yelp.com/biz/pita-heaven-chandler</a> </td>
+                        </tr>                                          
+                    </table                    
+                </div>
+                <br>
+
+              
+            </div>
+            <h3><a id="topart2" href="part2.html"> Part 2 >>> </a></h3>
+    </div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+</body>
+</html>
+
+<!--
+For this part of the assignment, you should submit a write up part1.html.
+
+Describe the format of your inverted index justifying your choice. What is the total size on disk, in absolute terms (number of bytes) and as % of the size of the original file.
+What data structures do you use for storing the inverted index in your query program?
+How do you process the review texts?
+How do you handle three types of queries?
+Describe your ranking algorithm and justify your choice. For each type of queries, you should pick at least two example search terms and show how the rankings changed after you added heuristic on tf-idf. For each business, you should display the following information:
+name
+business_id
+full_address
+stars
+review_count
+categories
+Link to the actual Yelp listing. Since the business_id's in this dataset are encrypted, the only possible way to find the listing on Yelp is to just yelp the business name.
+-->

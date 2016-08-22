@@ -1,0 +1,2886 @@
+{
+  "nodes": [
+    {
+      "size": 15,
+      "group": 0,
+      "name": "Arizona Seabottom",
+      "biz_id": "yejnvrJWfu226WuJZCFEXQ"
+    },
+    {
+      "size": 15,
+      "group": 1,
+      "name": "Papago's Cafe Grill & Deli",
+      "biz_id": "22K8kQzK4UtLwQAwOCf0MA"
+    },
+    {
+      "size": 15,
+      "group": 2,
+      "name": "Rod Works",
+      "biz_id": "ayPvmIg5fIU0DNxXmWHcAQ"
+    },
+    {
+      "size": 15,
+      "group": 3,
+      "name": "Discount Tire",
+      "biz_id": "j-VL1pxIxTCqjgDVOzwx1Q"
+    },
+    {
+      "size": 15,
+      "group": 4,
+      "name": "Gold Scissors",
+      "biz_id": "ga75yYyuGsFmhESdgdZwHw"
+    },
+    {
+      "size": 15,
+      "group": 5,
+      "name": "Allergy Ear Nose & Throat Center",
+      "biz_id": "pqWlQ7z9JUAIarOy_IoOmg"
+    },
+    {
+      "size": 15,
+      "group": 6,
+      "name": "Sahara Middle Eastern Restaurant",
+      "biz_id": "tyETqrYijm3cY4noCwl9Ww"
+    },
+    {
+      "size": 15,
+      "group": 7,
+      "name": "Diamond D Handyman",
+      "biz_id": "vDYERdCM8Aj-MMJB9yW3-w"
+    },
+    {
+      "size": 15,
+      "group": 8,
+      "name": "The Lodge",
+      "biz_id": "wH9WtaTlrRawH_IpK90RPg"
+    },
+    {
+      "size": 15,
+      "group": 9,
+      "name": "FedEx Office Print & Ship Center",
+      "biz_id": "tTtnk9X2CPtfieJYyumt_Q"
+    },
+    {
+      "size": 15,
+      "group": 10,
+      "name": "Humble Pie",
+      "biz_id": "WEUgyNNslbwhqYgku8Gt3Q"
+    },
+    {
+      "size": 15,
+      "group": 11,
+      "name": "Eribertos Mexican Food",
+      "biz_id": "PzbEhqo8uz2D-3OchHIPzQ"
+    },
+    {
+      "size": 15,
+      "group": 12,
+      "name": "Chipotle",
+      "biz_id": "XFf_SY9mZe0XGYjPetzpbQ"
+    },
+    {
+      "size": 15,
+      "group": 13,
+      "name": "Starbucks Coffee",
+      "biz_id": "n4bc44OGI6_IVd1apeifUw"
+    },
+    {
+      "size": 15,
+      "group": 14,
+      "name": "AA Wholesome Bakery",
+      "biz_id": "WwFsYHahQIMzuilmOAfR8g"
+    },
+    {
+      "size": 15,
+      "group": 15,
+      "name": "51 Freeway",
+      "biz_id": "O36iUta8mR3XsbACp4nS3Q"
+    },
+    {
+      "size": 15,
+      "group": 16,
+      "name": "Mountainside Fitness",
+      "biz_id": "Y3cFaIPFSMOgOf7zsADMxQ"
+    },
+    {
+      "size": 15,
+      "group": 17,
+      "name": "Scottsdale Cottonwoods Resort & Suites",
+      "biz_id": "e_seEhh522_d20JCKq2afA"
+    },
+    {
+      "size": 15,
+      "group": 18,
+      "name": "Gel-Q Nail & Spa",
+      "biz_id": "bVhIs14KgRzyR8umVL1CRQ"
+    },
+    {
+      "size": 15,
+      "group": 19,
+      "name": "Kabuki Japanese Restaurant",
+      "biz_id": "gRt4zXBVY_Z-bieKA5lq_g"
+    },
+    {
+      "size": 15,
+      "group": 20,
+      "name": "18 Degrees",
+      "biz_id": "_FgyuDnyDCXmWBy03Tq8TQ"
+    },
+    {
+      "size": 15,
+      "group": 21,
+      "name": "Costco Phoenix Business Center",
+      "biz_id": "QRpMVGh25uPRXoGKknOyMw"
+    },
+    {
+      "size": 15,
+      "group": 22,
+      "name": "Waffle House",
+      "biz_id": "hGTDqGAQtnyrTwoxF1_gAA"
+    },
+    {
+      "size": 15,
+      "group": 23,
+      "name": "Golden Spoon Frozen Yogurt",
+      "biz_id": "T35GMi7R4XtJ84W0Y_nDAg"
+    },
+    {
+      "size": 15,
+      "group": 24,
+      "name": "Villagio",
+      "biz_id": "NYR02j-mRfBUYjqO59PuaA"
+    },
+    {
+      "size": 15,
+      "group": 25,
+      "name": "In N Out Burger",
+      "biz_id": "dec2TzjQ1skgmugHKJyLwQ"
+    },
+    {
+      "size": 15,
+      "group": 26,
+      "name": "Thai Hut",
+      "biz_id": "oJpmYvLibGrYPDvcaUeMOw"
+    },
+    {
+      "size": 15,
+      "group": 27,
+      "name": "Diamond's Chinese Restaurant",
+      "biz_id": "Xsl-i1otDd3GXJEkkKJCaw"
+    },
+    {
+      "size": 15,
+      "group": 28,
+      "name": "Pig & Pickle",
+      "biz_id": "h_WtRK_umSU8LCCmAeqbFA"
+    },
+    {
+      "size": 15,
+      "group": 29,
+      "name": "Jimmy John's",
+      "biz_id": "0NhcabzEyeCIMsNCPOX-MQ"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "McDonald's",
+      "biz_id": "xH5axHFadmc7Veutt376TA"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "The Bernina Connection",
+      "biz_id": "iYj4QlA3Of2WHTtyYGTodw"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "Tony's Shoe Repair",
+      "biz_id": "W8CHl0aVIgW0JPpKsfAbxQ"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "A & P Nurseries & Lawn Mower Shop",
+      "biz_id": "pgELQueWyf3sYjPOlx0Pxw"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "CVS Pharmacy",
+      "biz_id": "H7_so2zcDoWluV-ER183iw"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "Jada Beauty",
+      "biz_id": "4gMWaDLctU-7MnIrpjOl3w"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "Apple Store",
+      "biz_id": "l5vzFaqSjvxZiRn0MJeKkg"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "Lowe's",
+      "biz_id": "9BnmL7nWKhKR0PD87Wua-A"
+    },
+    {
+      "size": 5,
+      "group": 0,
+      "name": "Elizebeth's Alterations",
+      "biz_id": "RAzbRTO__b6CQECcCT1I0g"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Dennys",
+      "biz_id": "qGuI5WK7-MVnPA6o2DGBAA"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "The Kitchen",
+      "biz_id": "TBfOrA3_4u38rFrF7LwU0A"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Aside of Heart",
+      "biz_id": "chQMtE0iF9CHr8T-ahkrKQ"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "In Season Deli",
+      "biz_id": "fNi9qUvM4G4MtjsFgUI7Qg"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Chick-fil-A",
+      "biz_id": "DAIBZ-I6i5wEUsxEolzXBA"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Spitfire Grill & Tavern",
+      "biz_id": "vnffHkFJbmd-J3OaBbK2Eg"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Champion Field",
+      "biz_id": "AKQvTmpNDluGzt9pLYmxAw"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Devoured Culinary Classic",
+      "biz_id": "145SQ_msdQ1yo7J0E63VoA"
+    },
+    {
+      "size": 5,
+      "group": 1,
+      "name": "Space Age Restaurant",
+      "biz_id": "dMXYzSsh7CnIX_6KixDW8A"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "The Secret Village",
+      "biz_id": "_4_84uCAFDI2VHHEQz5f2g"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Target",
+      "biz_id": "mPxByzuOwA286OcG-IyYoQ"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Target",
+      "biz_id": "mzVhCMNkndrgdZFqducydg"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Target Stores",
+      "biz_id": "N4Gw8aJNEywdDD9zcEcNiA"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Estilo Boutique",
+      "biz_id": "_D5xaPpKWV8oLZMqRo75Mw"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Savers",
+      "biz_id": "VaUPAYItVG2qf3YVx5yHxQ"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Embellish Home",
+      "biz_id": "_C4LYux9IHgTr0ghYbKVgA"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Nike at Scottsdale Quarter",
+      "biz_id": "Q87G5ezBUhqjQ1xHfZ3fSA"
+    },
+    {
+      "size": 5,
+      "group": 2,
+      "name": "Crate & Barrel",
+      "biz_id": "8_c7-t9_MfkExkdm0L304w"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "Discount Tire",
+      "biz_id": "myAxZJ_Tvyx_I1Z4wFqxRw"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "All-Pro Transmission",
+      "biz_id": "cmI7xMaYAOCce5K7MvsWXg"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "AAA Arizona Auto Repair",
+      "biz_id": "z-4TlEQcyzyf9t_S1DoZ0g"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "Firestone Complete Auto Care",
+      "biz_id": "Vm9I9lWK5vgN1yzzhUTIPg"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "Big O Tire Stores",
+      "biz_id": "bLk3tgJHryMAIQVcT-tXcQ"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "Community Tire Pros & Auto Repair",
+      "biz_id": "JlTPN5tFSM3jCuCufv_52A"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "Wheel Specialists, Inc.",
+      "biz_id": "yuTa7S2QR9uAE7UNdDV8EQ"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "The Car Shop",
+      "biz_id": "b9281KmsuMDvYVSJi-l9FA"
+    },
+    {
+      "size": 5,
+      "group": 3,
+      "name": "Prestige Custom Rides",
+      "biz_id": "nI0bynSpQtjPgVTBX1qnoA"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Great Clips",
+      "biz_id": "t0VT-l6kbDJMYGWa-d_A3A"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "V's Barbershop",
+      "biz_id": "e6-EY1yKzgnwYmRtvS69Fw"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Hair Stalgia",
+      "biz_id": "qHH9IMD6WvP4NlMXnSWHGw"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Foxtail Salon",
+      "biz_id": "kSTs0hYF0tFsiGj7aiMDYA"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Toni & Guy Hairdressing",
+      "biz_id": "FlhtEidXzQSDuLW65UMazw"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Supercuts",
+      "biz_id": "k1DNE0WhO_ZonpSypbeNyA"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Regis Salon",
+      "biz_id": "Y34FJbdf6DuRAJ0k12yPnQ"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Vega Salon",
+      "biz_id": "_CUuy5l9IAn8f4iJt7cZmQ"
+    },
+    {
+      "size": 5,
+      "group": 4,
+      "name": "Sport Clips",
+      "biz_id": "0jFiXsSwdvanL1HLkNwd0A"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Welch Physical Therapy",
+      "biz_id": "nu8bGKxvjK7JKBgU4fVbhQ"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Advanced Urgent Care",
+      "biz_id": "xtGPxmqw37SZylUPcJ1MHQ"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Ford-Caserta Eye Center",
+      "biz_id": "l18PQaqnyzBL2dknbYBpJg"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Pregnancy Care Center of Chandler",
+      "biz_id": "mxan7Kj8UVohbA_JGT40xw"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "West Valley Pediatric Dentistry",
+      "biz_id": "_6NsHJ6OxYCWz9ml9APZsw"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Tara R Hodges, DDS",
+      "biz_id": "VSqVAtT331-PmW5DJvELaA"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Southwest Veterinary Surgical Service PC",
+      "biz_id": "CA-kEofiGs1orzX6JrOkDg"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Mona Lisa Dental",
+      "biz_id": "p3ddasttQWyqgntZsaOwgw"
+    },
+    {
+      "size": 5,
+      "group": 5,
+      "name": "Sonoran Allergy & Asthma Center",
+      "biz_id": "DgDb56-TQRWR9B53LQNhxg"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Daphne's California Greek",
+      "biz_id": "t4pkeGscooStLjy-Js5Byw"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Pita Jungle",
+      "biz_id": "uIDdneARsmwPLebKrwMtBw"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Olympic Flame",
+      "biz_id": "cvb__rYMkj4BMhC3p_FB3Q"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Athens Gyros",
+      "biz_id": "eX_f1ZzrpejCp6xJpfLmDQ"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "The Nile Cafe",
+      "biz_id": "kCH4JxdKdwDfJdNFElSHzg"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Pita Jungle",
+      "biz_id": "qwmHm3s8p7J12AIY6Co8HQ"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Cafe Istanbul & Market",
+      "biz_id": "yktWUtKBja_Lzk3wwR6RFA"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "Gyros Palace",
+      "biz_id": "tQTqlMW0sODNbe188ah1Yg"
+    },
+    {
+      "size": 5,
+      "group": 6,
+      "name": "My Big Fat Greek Express",
+      "biz_id": "WyJRPTn2FCFdj2cYT9pqyw"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Moore's Pool Service",
+      "biz_id": "u1ygb6m7-Gi5q5rAb057cw"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Bike Masters",
+      "biz_id": "5kTHsQi0qoRJ4RuSZMC0vw"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "CPR Cell Phone Repair",
+      "biz_id": "oDsSGT5gby1y-YgBsMxOxw"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Streamline Audio Video",
+      "biz_id": "co0cJcfr9dHtK98TZPwnmg"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Eco Rehab",
+      "biz_id": "HZcfdAoTl9XOamL_K2UHEw"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Servpro of North & West Chandler",
+      "biz_id": "HoAlrcdSmHn-QmqvOJzGSQ"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "AC Doctors LLC",
+      "biz_id": "xUOU5nF5MmIhtpYhk6L5vA"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Going Places RV",
+      "biz_id": "5z6p8bavTG2EDdaMS_hkhQ"
+    },
+    {
+      "size": 5,
+      "group": 7,
+      "name": "Old Town Beach Cruisers",
+      "biz_id": "rfHQoulCmGmA9bMTA-ckQQ"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "The Grapevine",
+      "biz_id": "z6vO1HR8L2iW4avr610XKw"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "Kirk's Sports Grill",
+      "biz_id": "P4FXm3wP1MHbel8mA4iAow"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "Spanish Fly",
+      "biz_id": "wP5849J1DKB2KS3M6UwOAg"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "Sandbar",
+      "biz_id": "hsOnzcy8mFbUvIWFC1agoQ"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "The Auld Dubliner",
+      "biz_id": "zDyx_BL0RJbXWpXSFfrf8g"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "MercBar",
+      "biz_id": "peA3F-PnIfijYr8HuG-A-Q"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "The Skeptical Chymist",
+      "biz_id": "Vtx0VYkybAd71fzwgaoQ8g"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "Mabel's On Main",
+      "biz_id": "vwZ15OkVO6PemAe87k0M-Q"
+    },
+    {
+      "size": 5,
+      "group": 8,
+      "name": "The Lost Leaf",
+      "biz_id": "pQ3kRVmttsV1bHxuTf7TAg"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Officemax",
+      "biz_id": "dmyUJC3P9-rY16HLd26e6Q"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "United States Post Office - USPS 85021",
+      "biz_id": "F1keoCEPnpDLBqhglKqiDA"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Oreck Authorized Sales & Service",
+      "biz_id": "GJIl37k1Kitq5r43eUZ1Kw"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Prestige Cleaners - Sonora Village",
+      "biz_id": "q7DzFSkt1ColaWrAOw7rFw"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Legend Cleaners",
+      "biz_id": "TdjJcAPPpsd64gPPyd09jQ"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Clean Freak Car Wash",
+      "biz_id": "koB30F_ohIOfm0ZUTM7bFA"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Jos A Bank",
+      "biz_id": "Aceh-QkfNrxBNYo6KFUQEg"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Suntown Laundry & Dry Cleaning",
+      "biz_id": "RMcSaSsKiIRTO-OO-6kW3w"
+    },
+    {
+      "size": 5,
+      "group": 9,
+      "name": "Seville Cleaners",
+      "biz_id": "TjK3u3XIJA9nS2FJnti-3w"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Mamma Mia Subs & Brick Oven Pizza",
+      "biz_id": "k8JnZBspVOI8kLcQek-Chw"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Red Devil Italian Restaurant & Pizzeria",
+      "biz_id": "_w2wIsBh-1M1ZCed2KjLlw"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Naked Pizza",
+      "biz_id": "ewqEvlKJQkHZZ7eFlKzw3g"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Lucky's Pizza",
+      "biz_id": "oPH_GZyKw_QzPAV-TG0x1A"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Sauce Pizza & WIne",
+      "biz_id": "w5XcgWwGAN21Ly2HeU48IQ"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Sourdough Pizza Restaurant",
+      "biz_id": "h_764eIV-D3n7qjyBmluug"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Mafia Mike's",
+      "biz_id": "nd1hq7xxzrL_s420QqhDjw"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Pasta and Sugo",
+      "biz_id": "VtHKaOSOPhZqDGf85X1oiw"
+    },
+    {
+      "size": 5,
+      "group": 10,
+      "name": "Crust Pizza and Wine Cafe",
+      "biz_id": "kK4AzZ0YWI-U2G-paAL7Fg"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Arriba Mexican Grill",
+      "biz_id": "y6uO4ydAwBHUujfiSktxZg"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "La Barquita",
+      "biz_id": "xdv2kvaZodkWvTSV6pSSpA"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Two Hippies Beach House Outrageous Tacos and Burritos",
+      "biz_id": "qlrZzAktK8wODSHxhLEK7w"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "The Original Garcia's",
+      "biz_id": "glalhJa7wFWPIoJLBvKGfQ"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Sylvia's La Canasta Mexican Restaurant",
+      "biz_id": "vz2zQQSjy-NnnKLZzjjoxA"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Verde",
+      "biz_id": "hZRLGfRrZTo9up2P-0aAHg"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Federicos Mexican Food",
+      "biz_id": "LE-1ZOsjpPh7p95H2l5Fww"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Garcia's Mexican Restaurant",
+      "biz_id": "_mt0EQgGCG-qrLy51RnQag"
+    },
+    {
+      "size": 5,
+      "group": 11,
+      "name": "Rosita's Place",
+      "biz_id": "hWhVP-28LYP3llaMlAJ_JA"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Chipotle Mexican Grill",
+      "biz_id": "PSIoHJpLPnkoH78iYRk6vQ"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Pick Up Stix",
+      "biz_id": "T_d9GB_p0ajNTVEZ2CMmrw"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Moe's Southwest Grill",
+      "biz_id": "Bc-whgNf9N1VdcxAqfpjGA"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "The Blue Fin",
+      "biz_id": "kaIue7GRCmkPzDeHDBTttQ"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Genghis Grill - The Mongolian Stir Fry",
+      "biz_id": "qw8tzQGrA0lGgDBsMHAr9w"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Fàn Boy at ASU",
+      "biz_id": "E5CDCVDHpNzTPh5F3Pbppg"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "KFC",
+      "biz_id": "c51leTTj2gxo0PdypLoQWA"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Great China Super Buffet",
+      "biz_id": "En4UyDiGgmQuWq__50RAgA"
+    },
+    {
+      "size": 5,
+      "group": 12,
+      "name": "Genghis Grill",
+      "biz_id": "76d9NCIIZlzU12Oa-QUJog"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Dutch Bros. Coffee",
+      "biz_id": "EXmWz2eaKTGNIf3FJUlVZA"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "The Coffee Bean & Tea Leaf",
+      "biz_id": "jDZS6BUrz5PI-M4iQCTMsg"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Starbucks  ",
+      "biz_id": "u7pDoiqy3u0fv8kRHleYkA"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Starbucks Coffee",
+      "biz_id": "nDdfN6onfb0JoxKKYwCnjA"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Starbucks",
+      "biz_id": "e-U3s4nPAR0OK4RprleF4g"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Giant Coffee",
+      "biz_id": "CdqTxe171tKTOkk8T15GGA"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Starbucks",
+      "biz_id": "KHdadnkfYm0OgyIF_fvL8g"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Press Coffee Roasters",
+      "biz_id": "3OF6i6LTzRXpwNgodv7aeQ"
+    },
+    {
+      "size": 5,
+      "group": 13,
+      "name": "Dutch Bros Coffee",
+      "biz_id": "K4Oo7A5Kp5eSgBV7MgOu8Q"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Poppa Maize",
+      "biz_id": "GlaQICDLKSdTyKMZt9sN1Q"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Nami",
+      "biz_id": "ZEdaJ8mcMpPiFWgDuSPqeA"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Goodytwos Toffee Company",
+      "biz_id": "gAwoeSYoyVjp5rcwnaTz2w"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Gluten Free Creations",
+      "biz_id": "hfdiI70VeWZPfe-DTQancg"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Xooro",
+      "biz_id": "kiCEQlrmpji09pKQua4TVQ"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Paletas Betty",
+      "biz_id": "_TekkyyFeX_8MBepPIxuTg"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Churn",
+      "biz_id": "tAmevVP8B7PiWxcJ0PlYVA"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "Yuri's Popcorn & More",
+      "biz_id": "SwMqbqCLXy8XDH1rEGQ8rw"
+    },
+    {
+      "size": 5,
+      "group": 14,
+      "name": "See's Candy Shops",
+      "biz_id": "ng4_UnnYPqesby9C0WVz2Q"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Arizona",
+      "biz_id": "s30AdC9aWowTeUgS-K6nzw"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Big Surf Waterpark",
+      "biz_id": "81SLnb1zdCzRs2dj_PobOQ"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Butterfly Wonderland",
+      "biz_id": "cHmmow7f9giYMfQ4bp7JHw"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "P.F. Chang's Rock 'n' Roll Marathon and Half Marathon",
+      "biz_id": "oRJgXbcawYd3kULBucqdnA"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Salt River Tubing",
+      "biz_id": "l3WML3zeuotwUHzhbwCj_w"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "SunRidge Canyon Golf Club",
+      "biz_id": "oGYPsU7IJPhyVpd0F5lfTg"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Hot Chocolate 15/5K",
+      "biz_id": "gDMkLebIURwPcor2FvuYOg"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Camelback Golf Club",
+      "biz_id": "dzDBk0mSe84erwMHRyRshQ"
+    },
+    {
+      "size": 5,
+      "group": 15,
+      "name": "Soma Half and Quarterman Triathlon",
+      "biz_id": "kJEPUMn279P_GzFMCr5l0g"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "YMCA",
+      "biz_id": "ZKG7lQ-SuHcoVNKSi3KJzQ"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "24 Hour Fitness",
+      "biz_id": "oGZIo6Pim2C3NavFDYExYw"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "LA Fitness",
+      "biz_id": "l812thCTj-pIi3-cMaSiCQ"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "Tempe Family YMCA",
+      "biz_id": "ctJZqkw4VKVk94l-yh145g"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "LA Fitness",
+      "biz_id": "_4PneR-GyiymyNlwQ37V-w"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "Pro Edge Boxing",
+      "biz_id": "GMBvzlG0DWKwkYroDsdrwg"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "Gracie United Jiu-Jitsu",
+      "biz_id": "v6HZBjxN3XcnH9rWEsCbpg"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "Physix",
+      "biz_id": "a29I8gBwuIKOdNKwCYOxZA"
+    },
+    {
+      "size": 5,
+      "group": 16,
+      "name": "LA Fitness",
+      "biz_id": "XzIskorQEAOkCFvVPxJtLQ"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Residence Inn Phoenix Desert View at Mayo Clinic",
+      "biz_id": "u3_amLppmBrfBYUfaI0nVw"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Millennium Scottsdale Resort & Villas",
+      "biz_id": "Fo424KetiOnQp0DVJooYMw"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Holiday Inn Phoenix Downtown-North",
+      "biz_id": "_4BrDSkF5V2th2M9J22d3g"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Sheraton Crescent Hotel",
+      "biz_id": "QweOrPB4d80XnWtESAl1kQ"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Springhill Suites Chandler",
+      "biz_id": "Vm0olnUHnv8ur-67VynSJQ"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Sheraton Phoenix Airport Hotel Tempe",
+      "biz_id": "VgtEm_L23SNZEsyNMKwhog"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Renaissance Phoenix Downtown Hotel",
+      "biz_id": "V7Da92RVtaWGTL6GNkPT8A"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "Red Roof Inn",
+      "biz_id": "Avg7PU8_DBm0KfJ2t2lTzw"
+    },
+    {
+      "size": 5,
+      "group": 17,
+      "name": "The Scottsdale Plaza Resort",
+      "biz_id": "dJvUc4ViWEJ0NJfQtYo7xg"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "VS Nails & Spa",
+      "biz_id": "UtIN6wswhzTHVsZqfVNfOQ"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "7 Day Spa & Nails",
+      "biz_id": "Wa9nN637fEBbcAafbn2c8A"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "Top Line Nails",
+      "biz_id": "TaEvlp5tkaMqTjKzSY4Xxw"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "Maiya's Nail Salon",
+      "biz_id": "Ot4_B8hzUUruQBcLllMX8w"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "Lynn's Nails & Spa",
+      "biz_id": "rzf2kjbcJ8qhFHyrm7uvpg"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "Pro Nails by Tina",
+      "biz_id": "UGogpZhk0pkBNdvigzTvng"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "Central Nails",
+      "biz_id": "WtTF0_KzCunQpRoojbF5ww"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "Holly's Nail & Spa",
+      "biz_id": "McyB48SVPMPLZn5GTF34FA"
+    },
+    {
+      "size": 5,
+      "group": 18,
+      "name": "AZ Tip & Toes Nails",
+      "biz_id": "vANCNdPMrB4niP_48_YP1A"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Ichi Ban Japanese",
+      "biz_id": "rHFWPJML2WlGbad0Tqevxw"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Kyoto Japanese Restaurant",
+      "biz_id": "YEQkTCmphjr6XKPh4m93AQ"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Ah-So Sushi & Steak",
+      "biz_id": "OqRD-pLL7JNyYvmbcNmaDQ"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Hana Japanese Eatery",
+      "biz_id": "h6jfMpTZpNduLG0wE2tbaw"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "The Sushi Room",
+      "biz_id": "lfjzCAxtBzZiB9cxpn3BqQ"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Koi Sushi Bar & Grill",
+      "biz_id": "n0bviA6AXJVHb7IP8ui4rA"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Ten",
+      "biz_id": "iG7KoDGVWVc7KOhN6RG31g"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Hayashi Hibachi",
+      "biz_id": "sI-2c9HZ0RjZX1OU-5DW0A"
+    },
+    {
+      "size": 5,
+      "group": 19,
+      "name": "Pure Sushi",
+      "biz_id": "xCryT3Vzk_RLIkhiuUJwjQ"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "The Gilbert SkyBox Sports Grill",
+      "biz_id": "DtLIpieZkaObk-YKyPDsMw"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "Tavern Grille Scottsdale",
+      "biz_id": "tf5qrrarVIVYOy0evKrayA"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "Azool Grill",
+      "biz_id": "vYvT8J9uEh4Fqt7f9ILKlA"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "Lucky Lou's",
+      "biz_id": "eqdEOyNbEvl-Gne_w3_0jw"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "West Addison",
+      "biz_id": "X6kiOY9Ki8KXZjVHLro05w"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "Teakwoods Tavern & Grill",
+      "biz_id": "r8CwFUEQtL8gAT9KHnNhuw"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "Coach & Willies",
+      "biz_id": "j8nyAaN_w5t6wYv-ni23sg"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "K O'Donnell's American Bar & Grill",
+      "biz_id": "QVR7dsvBeg8xFt9B-vd1BA"
+    },
+    {
+      "size": 5,
+      "group": 20,
+      "name": "Uncle Bear's",
+      "biz_id": "gj9Y6PAos1yD4P7FO8gQWA"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Fry's Marketplace",
+      "biz_id": "iLODjOOpTExF69CdGPkuuA"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Costco Wholesale",
+      "biz_id": "WUTSRw9kiDHmQeoylYfrnA"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Fresh & Easy Neighborhood Market",
+      "biz_id": "opikDGSxDcfZwYWbk7dKtw"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Costco",
+      "biz_id": "ZAd2hniecnqH00t01ODQ3w"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Winco Foods",
+      "biz_id": "gWP6ofoyTbK0SZj1i_XqNQ"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Safeway Food & Drug",
+      "biz_id": "uwtzgXdroiFT3Lt89dlD-A"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "WinCo Foods",
+      "biz_id": "4dV7lNiORN8Nb4BDsNZ9WA"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Trader Joe's",
+      "biz_id": "m4Vdae9cdx7bgr6bIjjbkw"
+    },
+    {
+      "size": 5,
+      "group": 21,
+      "name": "Fresh & Easy Neighborhood Market",
+      "biz_id": "smWlFMgNgfDm8ZUKGvx65A"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "Mel's Diner",
+      "biz_id": "lnX2gaGdO0fNtykyFrp1AA"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "Village Inn",
+      "biz_id": "XNEzbF_xXKGboGUnvyHOmQ"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "IHOP",
+      "biz_id": "PD1R_FR9RFNGuLJAXSr2xg"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "Fast Eddie's Diner",
+      "biz_id": "iAYzRvyBrSkJDu_XZ-E1zQ"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "AZ Bread Company",
+      "biz_id": "1_siFXaQbxck3tiKRwnq7Q"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "5 & Diner",
+      "biz_id": "x6SFC7qtuuyI94SH7e-GwA"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "Waffle House",
+      "biz_id": "nY2QBNMEfT3j68j-DHOGyg"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "Dottie's True Blue Cafe",
+      "biz_id": "qKBdXH1kZNU-c9BHQaTUag"
+    },
+    {
+      "size": 5,
+      "group": 22,
+      "name": "Hillside Spot",
+      "biz_id": "nts2OALwvyvfNh9focRZ3w"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Mojo Yogurt",
+      "biz_id": "nFBse3YXN8CP1cDieyLz6A"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Aloha Yogurt",
+      "biz_id": "Hw8-13eEQKdtTnUxwUkkHw"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Yogurtology",
+      "biz_id": "yh2RW-YeoqjIO4Y4Cwz9bQ"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Yogurtology",
+      "biz_id": "TdNIQQcfslKjkey4-yAlKg"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Yogurtland",
+      "biz_id": "iELA6eREUgDVQrtLgYmS6Q"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Zoyo",
+      "biz_id": "upzSExkcvYMX9dJMgNARXg"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Ocean Blue Frozen Yogurt -Westgate",
+      "biz_id": "jch1dxmn8_O_HdBEyw8wkg"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Yogurtology",
+      "biz_id": "co8rv2zfOhMXc_TlEI9VrA"
+    },
+    {
+      "size": 5,
+      "group": 23,
+      "name": "Yogurt Builderz",
+      "biz_id": "jEkaxdgLxUCf4jtUnCPVWg"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "San Antigua Apartments",
+      "biz_id": "yKMn9JUT53MAlsnrbuHAig"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Pavilions On Central",
+      "biz_id": "xuSsETlnlO3XFhlBGRZkTA"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Empirian At Steele Park",
+      "biz_id": "leFRt1SBYL4ZHalLLTlbsQ"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Lucera Apartments",
+      "biz_id": "s_WW9KroSV7ijXoFfK-80A"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Symphony Apartments",
+      "biz_id": "hGSEOl61hSjKJZNZJ8uFUg"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Laguna Village",
+      "biz_id": "ShZMgQbUmTzya64HEOlgcA"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Hurst Carpet and Tile Care",
+      "biz_id": "N10oOIPgzzOpNlBsI8FyaA"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Verandas Apartments",
+      "biz_id": "pvukd8Pn1lNbzezXmGyx-Q"
+    },
+    {
+      "size": 5,
+      "group": 24,
+      "name": "Salado Springs Apartments",
+      "biz_id": "t2TFKf2kMy8pGfyGYOEeog"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Two Hippies Magic Mushroom Burgers",
+      "biz_id": "pfTwzep_4hRTX_jXoi38cw"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "In-N-Out Burger",
+      "biz_id": "X6mWr96ibKdXQSA6mpH90g"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "In-N-Out Burger",
+      "biz_id": "3Q7vtF_cdHGyp2JOlKcu-Q"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Burger Studio",
+      "biz_id": "x7M9x4AqyC-oYk0rajrOWw"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Burger King",
+      "biz_id": "dhk7wnnmWP3Fr9rj9p39dw"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Burgers & Bottles",
+      "biz_id": "rPp509oz4oFEdncoo7v_HA"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Two Hippies Gnarly Burger Joint",
+      "biz_id": "tfVKzEDu8XYyP8KO1dsNvQ"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Red Robin Gourmet Burgers",
+      "biz_id": "AgJbkqR-wre409if4fTbWQ"
+    },
+    {
+      "size": 5,
+      "group": 25,
+      "name": "Culver's",
+      "biz_id": "zwHM6hz8swKIG-4-BSKMPA"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Thai E-San",
+      "biz_id": "VbXy3tH5RAu7HjT7VeMMgA"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Maxim Restaurant",
+      "biz_id": "XbVqzUHS3c9FhG4lI13c3Q"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Thai Rama",
+      "biz_id": "cT_rocMh92B9t62Disp6gA"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Noodles Ranch",
+      "biz_id": "_HTE4pOKeJC7kcxiCF9vTA"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Saigon Pho",
+      "biz_id": "jJlOPkv4Xl6vxNzr51fnYw"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Pho Thanh",
+      "biz_id": "yVQiGdxmnrkJDyQXv2maNA"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Thai'd Up",
+      "biz_id": "kGEW4XXJQ2FS94gZv_N7VA"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "Thai Lahna Restaurant",
+      "biz_id": "wct7rZKyZqZftzmAU-vhWQ"
+    },
+    {
+      "size": 5,
+      "group": 26,
+      "name": "BlueMoon Vietnamese Kitchen",
+      "biz_id": "CMTDZRDnv_O0rwAvRVbjvg"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Cafe China",
+      "biz_id": "n6Hau_a7miaQtlb6gC2boQ"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Szechwan Palace",
+      "biz_id": "yQONzVpX-DEpGSuKMIov6A"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Tao Kitchen Asian Bistro",
+      "biz_id": "wccFOUVaqeNBRaY27wOCyg"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Szechwan Garden",
+      "biz_id": "SzCMZ664veIZpYp4Tk84Hg"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Chen & Wok",
+      "biz_id": "mzbQCUmd135tsNW6hY3G6A"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Golden Buddha",
+      "biz_id": "jbKVbSz51F8IcewsiRQu4A"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "Jade Palace",
+      "biz_id": "zxqvU415r_RtZRKDtdbIKQ"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "George & Son's Asian Cuisine",
+      "biz_id": "ZdQbDVZWDsO-d7q2qW8E3A"
+    },
+    {
+      "size": 5,
+      "group": 27,
+      "name": "China Grill",
+      "biz_id": "nLLs9fIiWw6WDku3_2NVVA"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Searsucker",
+      "biz_id": "GU3GGuECUTbHG8NPHXG9mQ"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Grand Lux Cafe",
+      "biz_id": "VO13q-11lh7St1gd7JPI3Q"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Salty Sow",
+      "biz_id": "UB2j_EV3CIM_E4LcpadKMQ"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Little Cleo's Seafood Legend",
+      "biz_id": "sWvfFtgSQCALAE_yPYVaTA"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Tomasos Restaurant",
+      "biz_id": "nCeeguQS-MHQRifOpKzwUg"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Vu Bistro",
+      "biz_id": "Q0tWheeEldwr0OKHTHB79g"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "The Arrogant Butcher",
+      "biz_id": "Xq9tkiHhyN_aBFswFeGLvA"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Phoenix City Grille",
+      "biz_id": "Pfb6VOIiroqDWOebfgWGPQ"
+    },
+    {
+      "size": 5,
+      "group": 28,
+      "name": "Fogo de Chao Scottsdale",
+      "biz_id": "OE5nAmaSVaopeRS1Cs9Kuw"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Capriottis Sandwich Shop",
+      "biz_id": "eHcQzL5eebqvKrLW5q283w"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Cheba Hut",
+      "biz_id": "KS2w8ychyieJbUqRa6kCHw"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "The Hero Factory",
+      "biz_id": "LRuIY8JFqadCSYLo242MGg"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Cheese 'n Stuff",
+      "biz_id": "UWrB5H3G-hhiHMy3iKV2ew"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Arizona Sandwich Co",
+      "biz_id": "YqcPBiZMeCjZFlJlA28zwQ"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Casella's Italian Delicatessen",
+      "biz_id": "kEyCMHBnohaWc81omLDfYg"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Jimmy John's",
+      "biz_id": "iE1eq7kDacRwgvFZJmjfgw"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Best of Philly",
+      "biz_id": "OoHWabV-ym7_HWlHeXTsVA"
+    },
+    {
+      "size": 5,
+      "group": 29,
+      "name": "Firehouse Subs",
+      "biz_id": "tONuJUMGL394lS3MM0UmzQ"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 30
+    },
+    {
+      "source": 0,
+      "target": 31
+    },
+    {
+      "source": 0,
+      "target": 32
+    },
+    {
+      "source": 0,
+      "target": 33
+    },
+    {
+      "source": 0,
+      "target": 34
+    },
+    {
+      "source": 0,
+      "target": 35
+    },
+    {
+      "source": 0,
+      "target": 36
+    },
+    {
+      "source": 0,
+      "target": 37
+    },
+    {
+      "source": 0,
+      "target": 38
+    },
+    {
+      "source": 1,
+      "target": 39
+    },
+    {
+      "source": 1,
+      "target": 40
+    },
+    {
+      "source": 1,
+      "target": 41
+    },
+    {
+      "source": 1,
+      "target": 42
+    },
+    {
+      "source": 1,
+      "target": 43
+    },
+    {
+      "source": 1,
+      "target": 44
+    },
+    {
+      "source": 1,
+      "target": 45
+    },
+    {
+      "source": 1,
+      "target": 46
+    },
+    {
+      "source": 1,
+      "target": 47
+    },
+    {
+      "source": 2,
+      "target": 48
+    },
+    {
+      "source": 2,
+      "target": 49
+    },
+    {
+      "source": 2,
+      "target": 50
+    },
+    {
+      "source": 2,
+      "target": 51
+    },
+    {
+      "source": 2,
+      "target": 52
+    },
+    {
+      "source": 2,
+      "target": 53
+    },
+    {
+      "source": 2,
+      "target": 54
+    },
+    {
+      "source": 2,
+      "target": 55
+    },
+    {
+      "source": 2,
+      "target": 56
+    },
+    {
+      "source": 3,
+      "target": 57
+    },
+    {
+      "source": 3,
+      "target": 58
+    },
+    {
+      "source": 3,
+      "target": 59
+    },
+    {
+      "source": 3,
+      "target": 60
+    },
+    {
+      "source": 3,
+      "target": 61
+    },
+    {
+      "source": 3,
+      "target": 62
+    },
+    {
+      "source": 3,
+      "target": 63
+    },
+    {
+      "source": 3,
+      "target": 64
+    },
+    {
+      "source": 3,
+      "target": 65
+    },
+    {
+      "source": 4,
+      "target": 66
+    },
+    {
+      "source": 4,
+      "target": 67
+    },
+    {
+      "source": 4,
+      "target": 68
+    },
+    {
+      "source": 4,
+      "target": 69
+    },
+    {
+      "source": 4,
+      "target": 70
+    },
+    {
+      "source": 4,
+      "target": 71
+    },
+    {
+      "source": 4,
+      "target": 72
+    },
+    {
+      "source": 4,
+      "target": 73
+    },
+    {
+      "source": 4,
+      "target": 74
+    },
+    {
+      "source": 5,
+      "target": 75
+    },
+    {
+      "source": 5,
+      "target": 76
+    },
+    {
+      "source": 5,
+      "target": 77
+    },
+    {
+      "source": 5,
+      "target": 78
+    },
+    {
+      "source": 5,
+      "target": 79
+    },
+    {
+      "source": 5,
+      "target": 80
+    },
+    {
+      "source": 5,
+      "target": 81
+    },
+    {
+      "source": 5,
+      "target": 82
+    },
+    {
+      "source": 5,
+      "target": 83
+    },
+    {
+      "source": 6,
+      "target": 84
+    },
+    {
+      "source": 6,
+      "target": 85
+    },
+    {
+      "source": 6,
+      "target": 86
+    },
+    {
+      "source": 6,
+      "target": 87
+    },
+    {
+      "source": 6,
+      "target": 88
+    },
+    {
+      "source": 6,
+      "target": 89
+    },
+    {
+      "source": 6,
+      "target": 90
+    },
+    {
+      "source": 6,
+      "target": 91
+    },
+    {
+      "source": 6,
+      "target": 92
+    },
+    {
+      "source": 7,
+      "target": 93
+    },
+    {
+      "source": 7,
+      "target": 94
+    },
+    {
+      "source": 7,
+      "target": 95
+    },
+    {
+      "source": 7,
+      "target": 96
+    },
+    {
+      "source": 7,
+      "target": 97
+    },
+    {
+      "source": 7,
+      "target": 98
+    },
+    {
+      "source": 7,
+      "target": 99
+    },
+    {
+      "source": 7,
+      "target": 100
+    },
+    {
+      "source": 7,
+      "target": 101
+    },
+    {
+      "source": 8,
+      "target": 102
+    },
+    {
+      "source": 8,
+      "target": 103
+    },
+    {
+      "source": 8,
+      "target": 104
+    },
+    {
+      "source": 8,
+      "target": 105
+    },
+    {
+      "source": 8,
+      "target": 106
+    },
+    {
+      "source": 8,
+      "target": 107
+    },
+    {
+      "source": 8,
+      "target": 108
+    },
+    {
+      "source": 8,
+      "target": 109
+    },
+    {
+      "source": 8,
+      "target": 110
+    },
+    {
+      "source": 9,
+      "target": 111
+    },
+    {
+      "source": 9,
+      "target": 112
+    },
+    {
+      "source": 9,
+      "target": 113
+    },
+    {
+      "source": 9,
+      "target": 114
+    },
+    {
+      "source": 9,
+      "target": 115
+    },
+    {
+      "source": 9,
+      "target": 116
+    },
+    {
+      "source": 9,
+      "target": 117
+    },
+    {
+      "source": 9,
+      "target": 118
+    },
+    {
+      "source": 9,
+      "target": 119
+    },
+    {
+      "source": 10,
+      "target": 120
+    },
+    {
+      "source": 10,
+      "target": 121
+    },
+    {
+      "source": 10,
+      "target": 122
+    },
+    {
+      "source": 10,
+      "target": 123
+    },
+    {
+      "source": 10,
+      "target": 124
+    },
+    {
+      "source": 10,
+      "target": 125
+    },
+    {
+      "source": 10,
+      "target": 126
+    },
+    {
+      "source": 10,
+      "target": 127
+    },
+    {
+      "source": 10,
+      "target": 128
+    },
+    {
+      "source": 11,
+      "target": 129
+    },
+    {
+      "source": 11,
+      "target": 130
+    },
+    {
+      "source": 11,
+      "target": 131
+    },
+    {
+      "source": 11,
+      "target": 132
+    },
+    {
+      "source": 11,
+      "target": 133
+    },
+    {
+      "source": 11,
+      "target": 134
+    },
+    {
+      "source": 11,
+      "target": 135
+    },
+    {
+      "source": 11,
+      "target": 136
+    },
+    {
+      "source": 11,
+      "target": 137
+    },
+    {
+      "source": 12,
+      "target": 138
+    },
+    {
+      "source": 12,
+      "target": 139
+    },
+    {
+      "source": 12,
+      "target": 140
+    },
+    {
+      "source": 12,
+      "target": 141
+    },
+    {
+      "source": 12,
+      "target": 142
+    },
+    {
+      "source": 12,
+      "target": 143
+    },
+    {
+      "source": 12,
+      "target": 144
+    },
+    {
+      "source": 12,
+      "target": 145
+    },
+    {
+      "source": 12,
+      "target": 146
+    },
+    {
+      "source": 13,
+      "target": 147
+    },
+    {
+      "source": 13,
+      "target": 148
+    },
+    {
+      "source": 13,
+      "target": 149
+    },
+    {
+      "source": 13,
+      "target": 150
+    },
+    {
+      "source": 13,
+      "target": 151
+    },
+    {
+      "source": 13,
+      "target": 152
+    },
+    {
+      "source": 13,
+      "target": 153
+    },
+    {
+      "source": 13,
+      "target": 154
+    },
+    {
+      "source": 13,
+      "target": 155
+    },
+    {
+      "source": 14,
+      "target": 156
+    },
+    {
+      "source": 14,
+      "target": 157
+    },
+    {
+      "source": 14,
+      "target": 158
+    },
+    {
+      "source": 14,
+      "target": 159
+    },
+    {
+      "source": 14,
+      "target": 160
+    },
+    {
+      "source": 14,
+      "target": 161
+    },
+    {
+      "source": 14,
+      "target": 162
+    },
+    {
+      "source": 14,
+      "target": 163
+    },
+    {
+      "source": 14,
+      "target": 164
+    },
+    {
+      "source": 15,
+      "target": 165
+    },
+    {
+      "source": 15,
+      "target": 166
+    },
+    {
+      "source": 15,
+      "target": 167
+    },
+    {
+      "source": 15,
+      "target": 168
+    },
+    {
+      "source": 15,
+      "target": 169
+    },
+    {
+      "source": 15,
+      "target": 170
+    },
+    {
+      "source": 15,
+      "target": 171
+    },
+    {
+      "source": 15,
+      "target": 172
+    },
+    {
+      "source": 15,
+      "target": 173
+    },
+    {
+      "source": 16,
+      "target": 174
+    },
+    {
+      "source": 16,
+      "target": 175
+    },
+    {
+      "source": 16,
+      "target": 176
+    },
+    {
+      "source": 16,
+      "target": 177
+    },
+    {
+      "source": 16,
+      "target": 178
+    },
+    {
+      "source": 16,
+      "target": 179
+    },
+    {
+      "source": 16,
+      "target": 180
+    },
+    {
+      "source": 16,
+      "target": 181
+    },
+    {
+      "source": 16,
+      "target": 182
+    },
+    {
+      "source": 17,
+      "target": 183
+    },
+    {
+      "source": 17,
+      "target": 184
+    },
+    {
+      "source": 17,
+      "target": 185
+    },
+    {
+      "source": 17,
+      "target": 186
+    },
+    {
+      "source": 17,
+      "target": 187
+    },
+    {
+      "source": 17,
+      "target": 188
+    },
+    {
+      "source": 17,
+      "target": 189
+    },
+    {
+      "source": 17,
+      "target": 190
+    },
+    {
+      "source": 17,
+      "target": 191
+    },
+    {
+      "source": 18,
+      "target": 192
+    },
+    {
+      "source": 18,
+      "target": 193
+    },
+    {
+      "source": 18,
+      "target": 194
+    },
+    {
+      "source": 18,
+      "target": 195
+    },
+    {
+      "source": 18,
+      "target": 196
+    },
+    {
+      "source": 18,
+      "target": 197
+    },
+    {
+      "source": 18,
+      "target": 198
+    },
+    {
+      "source": 18,
+      "target": 199
+    },
+    {
+      "source": 18,
+      "target": 200
+    },
+    {
+      "source": 19,
+      "target": 201
+    },
+    {
+      "source": 19,
+      "target": 202
+    },
+    {
+      "source": 19,
+      "target": 203
+    },
+    {
+      "source": 19,
+      "target": 204
+    },
+    {
+      "source": 19,
+      "target": 205
+    },
+    {
+      "source": 19,
+      "target": 206
+    },
+    {
+      "source": 19,
+      "target": 207
+    },
+    {
+      "source": 19,
+      "target": 208
+    },
+    {
+      "source": 19,
+      "target": 209
+    },
+    {
+      "source": 20,
+      "target": 210
+    },
+    {
+      "source": 20,
+      "target": 211
+    },
+    {
+      "source": 20,
+      "target": 212
+    },
+    {
+      "source": 20,
+      "target": 213
+    },
+    {
+      "source": 20,
+      "target": 214
+    },
+    {
+      "source": 20,
+      "target": 215
+    },
+    {
+      "source": 20,
+      "target": 216
+    },
+    {
+      "source": 20,
+      "target": 217
+    },
+    {
+      "source": 20,
+      "target": 218
+    },
+    {
+      "source": 21,
+      "target": 219
+    },
+    {
+      "source": 21,
+      "target": 220
+    },
+    {
+      "source": 21,
+      "target": 221
+    },
+    {
+      "source": 21,
+      "target": 222
+    },
+    {
+      "source": 21,
+      "target": 223
+    },
+    {
+      "source": 21,
+      "target": 224
+    },
+    {
+      "source": 21,
+      "target": 225
+    },
+    {
+      "source": 21,
+      "target": 226
+    },
+    {
+      "source": 21,
+      "target": 227
+    },
+    {
+      "source": 22,
+      "target": 228
+    },
+    {
+      "source": 22,
+      "target": 229
+    },
+    {
+      "source": 22,
+      "target": 230
+    },
+    {
+      "source": 22,
+      "target": 231
+    },
+    {
+      "source": 22,
+      "target": 232
+    },
+    {
+      "source": 22,
+      "target": 233
+    },
+    {
+      "source": 22,
+      "target": 234
+    },
+    {
+      "source": 22,
+      "target": 235
+    },
+    {
+      "source": 22,
+      "target": 236
+    },
+    {
+      "source": 23,
+      "target": 237
+    },
+    {
+      "source": 23,
+      "target": 238
+    },
+    {
+      "source": 23,
+      "target": 239
+    },
+    {
+      "source": 23,
+      "target": 240
+    },
+    {
+      "source": 23,
+      "target": 241
+    },
+    {
+      "source": 23,
+      "target": 242
+    },
+    {
+      "source": 23,
+      "target": 243
+    },
+    {
+      "source": 23,
+      "target": 244
+    },
+    {
+      "source": 23,
+      "target": 245
+    },
+    {
+      "source": 24,
+      "target": 246
+    },
+    {
+      "source": 24,
+      "target": 247
+    },
+    {
+      "source": 24,
+      "target": 248
+    },
+    {
+      "source": 24,
+      "target": 249
+    },
+    {
+      "source": 24,
+      "target": 250
+    },
+    {
+      "source": 24,
+      "target": 251
+    },
+    {
+      "source": 24,
+      "target": 252
+    },
+    {
+      "source": 24,
+      "target": 253
+    },
+    {
+      "source": 24,
+      "target": 254
+    },
+    {
+      "source": 25,
+      "target": 255
+    },
+    {
+      "source": 25,
+      "target": 256
+    },
+    {
+      "source": 25,
+      "target": 257
+    },
+    {
+      "source": 25,
+      "target": 258
+    },
+    {
+      "source": 25,
+      "target": 259
+    },
+    {
+      "source": 25,
+      "target": 260
+    },
+    {
+      "source": 25,
+      "target": 261
+    },
+    {
+      "source": 25,
+      "target": 262
+    },
+    {
+      "source": 25,
+      "target": 263
+    },
+    {
+      "source": 26,
+      "target": 264
+    },
+    {
+      "source": 26,
+      "target": 265
+    },
+    {
+      "source": 26,
+      "target": 266
+    },
+    {
+      "source": 26,
+      "target": 267
+    },
+    {
+      "source": 26,
+      "target": 268
+    },
+    {
+      "source": 26,
+      "target": 269
+    },
+    {
+      "source": 26,
+      "target": 270
+    },
+    {
+      "source": 26,
+      "target": 271
+    },
+    {
+      "source": 26,
+      "target": 272
+    },
+    {
+      "source": 27,
+      "target": 273
+    },
+    {
+      "source": 27,
+      "target": 274
+    },
+    {
+      "source": 27,
+      "target": 275
+    },
+    {
+      "source": 27,
+      "target": 276
+    },
+    {
+      "source": 27,
+      "target": 277
+    },
+    {
+      "source": 27,
+      "target": 278
+    },
+    {
+      "source": 27,
+      "target": 279
+    },
+    {
+      "source": 27,
+      "target": 280
+    },
+    {
+      "source": 27,
+      "target": 281
+    },
+    {
+      "source": 28,
+      "target": 282
+    },
+    {
+      "source": 28,
+      "target": 283
+    },
+    {
+      "source": 28,
+      "target": 284
+    },
+    {
+      "source": 28,
+      "target": 285
+    },
+    {
+      "source": 28,
+      "target": 286
+    },
+    {
+      "source": 28,
+      "target": 287
+    },
+    {
+      "source": 28,
+      "target": 288
+    },
+    {
+      "source": 28,
+      "target": 289
+    },
+    {
+      "source": 28,
+      "target": 290
+    },
+    {
+      "source": 29,
+      "target": 291
+    },
+    {
+      "source": 29,
+      "target": 292
+    },
+    {
+      "source": 29,
+      "target": 293
+    },
+    {
+      "source": 29,
+      "target": 294
+    },
+    {
+      "source": 29,
+      "target": 295
+    },
+    {
+      "source": 29,
+      "target": 296
+    },
+    {
+      "source": 29,
+      "target": 297
+    },
+    {
+      "source": 29,
+      "target": 298
+    },
+    {
+      "source": 29,
+      "target": 299
+    }
+  ]
+}
